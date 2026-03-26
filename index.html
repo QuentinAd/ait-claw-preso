@@ -30,10 +30,13 @@
 
   .reveal .slides section {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 60%, var(--ocean-light) 100%);
-    padding: 30px 50px;
+    padding: 28px 50px 20px;
     height: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .reveal h1, .reveal h2, .reveal h3 {
@@ -44,19 +47,15 @@
     letter-spacing: -0.02em;
   }
 
-  .reveal h1 { font-size: 1.8em; margin-bottom: 0.3em; }
-  .reveal h2 { font-size: 1.3em; margin-bottom: 0.3em; }
-  .reveal h3 { font-size: 0.9em; color: var(--seafoam); font-weight: 600; margin-bottom: 0.2em; }
+  .reveal h1 { font-size: 1.7em; margin-bottom: 0.2em; }
+  .reveal h2 { font-size: 1.2em; margin-bottom: 0.25em; }
+  .reveal h3 { font-size: 0.85em; color: var(--seafoam); font-weight: 600; margin-bottom: 0.15em; }
 
-  .reveal p, .reveal li {
-    font-size: 0.62em;
-    line-height: 1.5;
-    color: rgba(241,250,238,0.88);
-  }
+  .reveal p, .reveal li { font-size: 0.58em; line-height: 1.45; color: rgba(241,250,238,0.88); }
 
-  .reveal ul { list-style: none; padding-left: 0; margin: 6px 0; }
-  .reveal ul li { margin-bottom: 2px; }
-  .reveal ul li::before { content: "🦀 "; font-size: 0.8em; margin-right: 4px; }
+  .reveal ul { list-style: none; padding-left: 0; margin: 4px 0; }
+  .reveal ul li { margin-bottom: 1px; }
+  .reveal ul li::before { content: "🦀 "; font-size: 0.8em; margin-right: 3px; }
   .reveal ul.no-crab li::before { content: ""; margin-right: 0; }
   .reveal ul.dash li::before { content: "— "; color: var(--crab-orange); }
   .reveal ul.check li::before { content: "✓ "; color: var(--kelp-green); }
@@ -72,189 +71,104 @@
     background: rgba(10, 22, 40, 0.85);
     border: 1px solid rgba(168,218,220,0.2);
     border-radius: 8px;
-    padding: 12px;
-    font-size: 0.44em;
+    padding: 10px;
+    font-size: 0.42em;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     width: 100%;
-    margin: 8px 0;
+    margin: 6px 0;
   }
-
   .reveal code { font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace; }
-  .reveal pre code { max-height: 400px; line-height: 1.4; }
-
+  .reveal pre code { max-height: 360px; line-height: 1.35; }
   .reveal p code, .reveal li code {
     background: rgba(168,218,220,0.15);
     border-radius: 4px;
-    padding: 2px 6px;
+    padding: 1px 5px;
     font-size: 0.88em;
     color: var(--seafoam);
   }
 
-  .reveal table { margin: 8px 0; border-collapse: collapse; width: 100%; font-size: 0.52em; }
+  .reveal table { margin: 6px 0; border-collapse: collapse; width: 100%; font-size: 0.48em; }
   .reveal table th {
-    background: rgba(255,107,53,0.15);
-    color: var(--crab-orange);
-    font-weight: 600;
-    text-align: left;
-    padding: 6px 10px;
-    border-bottom: 2px solid rgba(255,107,53,0.3);
+    background: rgba(255,107,53,0.15); color: var(--crab-orange); font-weight: 600;
+    text-align: left; padding: 5px 8px; border-bottom: 2px solid rgba(255,107,53,0.3);
   }
-  .reveal table td { padding: 5px 10px; border-bottom: 1px solid rgba(168,218,220,0.1); color: rgba(241,250,238,0.85); }
-  .reveal table tr:hover td { background: rgba(168,218,220,0.05); }
+  .reveal table td { padding: 4px 8px; border-bottom: 1px solid rgba(168,218,220,0.1); }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0; }
   .stat-box {
-    background: rgba(168,218,220,0.08);
-    border: 1px solid rgba(168,218,220,0.15);
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
+    background: rgba(168,218,220,0.08); border: 1px solid rgba(168,218,220,0.15);
+    border-radius: 10px; padding: 12px; text-align: center;
   }
-  .stat-box .number { font-size: 1.8em; font-weight: 800; color: var(--crab-orange); line-height: 1.1; }
-  .stat-box .label { font-size: 0.6em; color: var(--seafoam); margin-top: 4px; }
+  .stat-box .number { font-size: 1.5em; font-weight: 800; color: var(--crab-orange); line-height: 1.1; }
+  .stat-box .label { font-size: 0.55em; color: var(--seafoam); margin-top: 3px; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
 
   .live-badge {
-    display: inline-block;
-    background: var(--crab-red);
-    color: white;
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 0.5em;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: pulse-live 2s ease-in-out infinite;
-    vertical-align: middle;
-    margin-left: 6px;
+    display: inline-block; background: var(--crab-red); color: white;
+    padding: 2px 8px; border-radius: 4px; font-size: 0.45em; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    animation: pulse-live 2s ease-in-out infinite; vertical-align: middle; margin-left: 5px;
   }
   @keyframes pulse-live { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
   .reveal .slide-number { color: var(--seafoam); font-size: 0.55em; }
   .reveal .progress span { background: var(--crab-orange); }
 
-  .title-slide {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .title-slide h1 { font-size: 1.7em; line-height: 1.15; margin-bottom: 10px; }
-  .title-crab { font-size: 2.5em; margin-bottom: 8px; filter: drop-shadow(0 0 20px rgba(255,107,53,0.4)); }
-  .subtitle { font-size: 0.62em; color: var(--seafoam); margin-top: 6px; }
-  .author { font-size: 0.55em; color: rgba(241,250,238,0.6); margin-top: 14px; }
+  /* Title slide */
+  .title-slide { text-align: center !important; align-items: center; }
+  .title-slide h1 { font-size: 1.6em; line-height: 1.15; margin-bottom: 8px; }
+  .title-crab { font-size: 2em; margin-bottom: 4px; filter: drop-shadow(0 0 16px rgba(255,107,53,0.4)); }
+  .subtitle { font-size: 0.58em; color: var(--seafoam); margin-top: 4px; }
+  .author { font-size: 0.5em; color: rgba(241,250,238,0.6); margin-top: 10px; }
 
+  /* Wave watermark */
   .reveal .slides section::after {
-    content: "";
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 40px;
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 30px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='rgba(168,218,220,0.04)' d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,30 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat;
-    background-size: cover;
-    pointer-events: none;
+    background-size: cover; pointer-events: none;
   }
-
   .reveal .slides section.stack { background: none; padding: 0; }
   .reveal .slides section.stack::after { display: none; }
 
   blockquote {
-    border-left: 4px solid var(--crab-orange);
-    padding: 8px 16px;
-    margin: 10px 0;
-    background: rgba(255,107,53,0.06);
-    border-radius: 0 8px 8px 0;
-    font-style: italic;
-    font-size: 0.58em;
-    color: rgba(241,250,238,0.9);
+    border-left: 3px solid var(--crab-orange); padding: 6px 14px; margin: 8px 0;
+    background: rgba(255,107,53,0.06); border-radius: 0 8px 8px 0;
+    font-style: italic; font-size: 0.54em; color: rgba(241,250,238,0.9);
   }
-  blockquote cite { display: block; margin-top: 6px; font-style: normal; font-size: 0.85em; color: var(--crab-orange); }
+  blockquote cite { display: block; margin-top: 4px; font-style: normal; font-size: 0.85em; color: var(--crab-orange); }
 
-  /* Hover tooltip for presenter notes */
-  .hover-note {
-    position: relative;
-    cursor: help;
-    border-bottom: 1px dotted rgba(168,218,220,0.4);
-  }
+  /* Hover tooltip — positioned BELOW to avoid overflow */
+  .hover-note { position: relative; cursor: help; border-bottom: 1px dotted rgba(168,218,220,0.4); }
   .hover-note::after {
     content: attr(data-note);
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(10,22,40,0.95);
-    border: 1px solid var(--crab-orange);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 0.75em;
-    font-style: normal;
-    color: var(--foam-white);
-    white-space: normal;
-    width: 300px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    z-index: 100;
-    line-height: 1.4;
+    position: absolute; top: 110%; left: 0;
+    background: rgba(10,22,40,0.97); border: 1px solid var(--crab-orange);
+    border-radius: 8px; padding: 10px 14px; font-size: 0.7em; font-style: normal;
+    color: var(--foam-white); white-space: normal; width: 340px; max-width: 90vw;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 200; line-height: 1.4;
   }
   .hover-note:hover::after { opacity: 1; }
 
-  /* Demo command with hover tooltip */
-  .demo-cmd {
-    background: rgba(42,157,143,0.1);
-    border: 1px solid rgba(42,157,143,0.3);
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-family: monospace;
-    font-size: 0.48em;
-    color: var(--kelp-green);
-    margin: 5px 0;
-    cursor: help;
-    position: relative;
-  }
-  .demo-cmd::before { content: "$ "; color: var(--crab-orange); font-weight: bold; }
-  .demo-cmd .cmd-tip {
-    position: absolute;
-    bottom: 110%;
-    left: 0;
-    background: rgba(10,22,40,0.95);
-    border: 1px solid var(--kelp-green);
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-size: 1em;
-    color: var(--foam-white);
-    white-space: normal;
-    width: 320px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    z-index: 100;
-    line-height: 1.4;
-  }
-  .demo-cmd:hover .cmd-tip { opacity: 1; }
-
-  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin: 10px 0; }
-  .vs-card { background: rgba(168,218,220,0.06); border: 1px solid rgba(168,218,220,0.15); border-radius: 10px; padding: 14px; }
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; margin: 8px 0; }
+  .vs-card { background: rgba(168,218,220,0.06); border: 1px solid rgba(168,218,220,0.15); border-radius: 10px; padding: 12px; }
   .vs-card.danger { border-color: rgba(230,57,70,0.3); background: rgba(230,57,70,0.05); }
   .vs-card.success { border-color: rgba(42,157,143,0.3); background: rgba(42,157,143,0.05); }
-  .vs-label { font-size: 1.5em; color: var(--seafoam); font-weight: 800; text-align: center; }
+  .vs-label { font-size: 1.4em; color: var(--seafoam); font-weight: 800; text-align: center; }
 
-  .flow-arrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 12px 0; font-size: 0.58em; }
-  .flow-arrow .step { background: rgba(168,218,220,0.1); border: 1px solid rgba(168,218,220,0.2); border-radius: 8px; padding: 8px 14px; text-align: center; color: var(--foam-white); }
+  .flow-arrow { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 8px 0; font-size: 0.54em; }
+  .flow-arrow .step { background: rgba(168,218,220,0.1); border: 1px solid rgba(168,218,220,0.2); border-radius: 8px; padding: 7px 12px; text-align: center; color: var(--foam-white); }
   .flow-arrow .step.active { border-color: var(--crab-orange); background: rgba(255,107,53,0.1); }
   .flow-arrow .arr { color: var(--crab-orange); font-size: 1.5em; }
 
-  .spectrum { display: flex; height: 36px; border-radius: 8px; overflow: hidden; margin: 10px 0; font-size: 0.5em; font-weight: 600; }
-  .spectrum .seg { display: flex; align-items: center; justify-content: center; color: white; padding: 0 10px; white-space: nowrap; }
+  .spectrum { display: flex; height: 32px; border-radius: 8px; overflow: hidden; margin: 8px 0; font-size: 0.46em; font-weight: 600; }
+  .spectrum .seg { display: flex; align-items: center; justify-content: center; color: white; padding: 0 8px; white-space: nowrap; }
 
   .reveal a { color: var(--seafoam); text-decoration: underline; text-decoration-color: rgba(168,218,220,0.4); }
   .reveal a:hover { color: var(--crab-orange); }
 
-  @media (min-width: 1024px) {
-    .reveal h1 { font-size: 2em; }
-    .reveal h2 { font-size: 1.4em; }
-  }
+  /* QR code styling */
+  .qr-container { display: inline-block; background: white; padding: 8px; border-radius: 8px; }
 </style>
 </head>
 <body>
@@ -262,24 +176,20 @@
 <div class="reveal">
 <div class="slides">
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 1: TITLE
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 1: TITLE ══════ -->
 <section class="title-slide">
   <div class="title-crab">🦀</div>
   <h1>Harness Engineering,<br>Crustaceans &amp;<br>Near-Autonomous Agents</h1>
   <p class="subtitle">Event-driven AI agents: from personal infra to <span class="accent">professional applications</span></p>
-  <p class="author">Quentin Adam &bull; AI/Data Engineer @ <a href="https://dakotaanalytics.ca" target="_blank" style="color:var(--crab-orange);">Dakota Analytics</a> &bull; AI Tinkerers Calgary &bull; March 26, 2026</p>
+  <p class="author">Quentin Adam &bull; AI/Data Engineer @ <a href="https://dakotaanalytics.com" target="_blank" style="color:var(--crab-orange);">Dakota Analytics</a> &bull; AI Tinkerers Calgary &bull; March 27, 2026</p>
   <aside class="notes">
-    Welcome everyone. I'm Quentin Adam, AI/Data Engineer at Dakota Analytics. Tonight I'll show you what happens when you treat AI as always-on infrastructure, not just a chat window. I'm running real agents on a Mac — they monitor my server, manage my family kitchen, and respond to Telegram while I sleep. The pattern scales from personal to industrial. Let's dive in.
+    Welcome everyone. I'm Quentin Adam, AI/Data Engineer at Dakota Analytics. Tonight I'll show you what happens when you treat AI as always-on infrastructure. I'm running real agents on a Mac — they monitor my server, manage my family kitchen, and respond to Telegram while I sleep. The pattern scales from personal to industrial.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 2: THE CRAB REVOLUTION
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 2: CRAB REVOLUTION ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="Claude Code's crab mascot inspired a community ecosystem. OpenClaw went big. NanoClaw went minimal. Both are crustacean-themed.">The Crab Revolution 🦀</span></h2>
+  <h2><span class="hover-note" data-note="Claude Code crab mascot → community ecosystem. OpenClaw went big. NanoClaw went minimal. Both crustacean-themed. Keep it light and punny.">The Crab Revolution 🦀</span></h2>
 
   <div class="flow-arrow">
     <div class="step">
@@ -306,36 +216,32 @@
     <cite>— A pinch of context for the uninitiated</cite>
   </blockquote>
 
-  <p style="font-size:0.55em;"><span class="accent">The question:</span> how much code do you need for an always-on personal AI agent?</p>
+  <p style="font-size:0.52em;"><span class="accent">The question:</span> how much code do you need for an always-on personal AI agent?</p>
 
   <aside class="notes">
-    Claude Code shipped with a crab mascot. The community ran with it. Peter Steinberger built OpenClaw — 400K lines connecting every messaging app. NanoClaw by Gavriel Cohen asked: what if we did it in 500 lines? The crustacean theme is fun but the real question is architectural.
+    Claude Code shipped with a crab mascot. Community ran with it. Peter Steinberger built OpenClaw — 400K lines connecting every messaging app. NanoClaw asked: what if 500 lines? The real question is architectural.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 3: OPENCLAW vs NANOCLAW
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 3: OPENCLAW vs NANOCLAW ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="Key: NanoClaw uses OS-level isolation (containers) vs OpenClaw's app-level sandboxing. Skills over features.">OpenClaw vs NanoClaw</span></h2>
+  <h2><span class="hover-note" data-note="Key: OS-level containers vs app-level sandboxing. Skills over features. /add-telegram transforms your fork, core stays tiny.">OpenClaw vs NanoClaw</span></h2>
 
   <div class="vs-grid">
     <div class="vs-card danger">
-      <h3 style="text-align:center; margin-bottom:8px;"><a href="https://github.com/openclaw/openclaw" target="_blank" style="color:var(--crab-red);">OpenClaw</a></h3>
-      <ul class="no-crab" style="font-size:0.82em;">
+      <h3 style="text-align:center; margin-bottom:6px;"><a href="https://github.com/openclaw/openclaw" target="_blank" style="color:var(--crab-red);">OpenClaw</a></h3>
+      <ul class="no-crab" style="font-size:0.78em;">
         <li>🔴 ~400,000 lines / 70+ deps</li>
-        <li>🔴 Application-level sandboxing</li>
+        <li>🔴 App-level sandboxing</li>
         <li>🔴 Shared Node.js process</li>
         <li>🔴 <a href="https://en.wikipedia.org/wiki/OpenClaw" target="_blank">CVE-2026-25253</a> (CVSS 8.8)</li>
         <li>🔴 12% of ClawHub skills malicious</li>
       </ul>
     </div>
-
     <div class="vs-label">vs</div>
-
     <div class="vs-card success">
-      <h3 style="text-align:center; margin-bottom:8px;"><a href="https://github.com/gavrielc/nanoclaw" target="_blank" style="color:var(--kelp-green);">NanoClaw</a></h3>
-      <ul class="no-crab" style="font-size:0.82em;">
+      <h3 style="text-align:center; margin-bottom:6px;"><a href="https://github.com/gavrielc/nanoclaw" target="_blank" style="color:var(--kelp-green);">NanoClaw</a></h3>
+      <ul class="no-crab" style="font-size:0.78em;">
         <li>✅ ~500 lines core / 6 deps</li>
         <li>✅ <strong>OS-level container isolation</strong></li>
         <li>✅ Separate Linux VM per group</li>
@@ -345,25 +251,23 @@
     </div>
   </div>
 
-  <p style="font-size:0.52em; margin-top:8px;"><span class="accent">NanoClaw philosophy:</span> <em>"Don't add features. Add skills."</em> — Messaging channels (Telegram, Slack, Discord) are added via <code>/add-telegram</code> skills that transform your fork, keeping the core tiny.</p>
+  <p style="font-size:0.48em;"><span class="accent">NanoClaw:</span> <em>"Don't add features. Add skills."</em> — Channels (Telegram, Slack, Discord) added via <code>/add-telegram</code> skills that transform your fork. Core stays tiny.</p>
 
   <aside class="notes">
-    Side-by-side. OpenClaw has 400K lines in a shared process — one compromise and everything is exposed. NanoClaw uses real container isolation. The skills philosophy is key: instead of building in every messaging adapter, you add them via Claude Code skills. /add-telegram transforms your fork. The core stays small and auditable.
+    Side-by-side. OpenClaw: 400K lines, shared process, one compromise exposes everything. NanoClaw: real container isolation. Skills philosophy is key: /add-telegram transforms your fork instead of bloating the core. The core stays small and auditable.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 4: HARNESS ENGINEERING
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 4: HARNESS ENGINEERING ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="The harness is the system wrapping the AI model: permissions, state, tools, lifecycle. The model is not the hard part — the harness is.">Harness Engineering</span></h2>
-  <p style="font-size:0.52em; margin-bottom:10px;">2025 was agents. <span class="accent">2026 is agent harnesses.</span> — <a href="https://aakashgupta.medium.com/2025-was-agents-2026-is-agent-harnesses-heres-why-that-changes-everything-073e9877655e" target="_blank">source</a></p>
+  <h2><span class="hover-note" data-note="The harness wraps the AI model: permissions, state, tools, lifecycle. The model is not the hard part. Context engineering = right context + right tools + right time.">Harness Engineering</span></h2>
+  <p style="font-size:0.48em; margin-bottom:8px;">2025 was agents. <span class="accent">2026 is agent harnesses.</span> — <a href="https://aakashgupta.medium.com/2025-was-agents-2026-is-agent-harnesses-heres-why-that-changes-everything-073e9877655e" target="_blank">source</a></p>
 
   <div class="two-col">
     <div>
       <h3>What is a harness?</h3>
-      <p style="font-size:0.58em;">The system wrapping the AI model for <strong>reliable long-running tasks</strong>. (<a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank">Anthropic blog</a>)</p>
-      <ul class="arrow" style="margin-top:8px;">
+      <p style="font-size:0.54em;">The system wrapping the AI model for <strong>reliable long-running tasks</strong>. (<a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank">Anthropic blog</a>)</p>
+      <ul class="arrow" style="margin-top:6px;">
         <li>Permissions &amp; sandboxing</li>
         <li>State persistence across sessions</li>
         <li>Tool orchestration (MCP servers)</li>
@@ -376,125 +280,113 @@
         "I haven't written a single line of code myself since December 2025. I run 10-20 AI agents in parallel."
         <cite>— <a href="https://fortune.com/2026/03/17/andrej-karpathy-loop-autonomous-ai-agents-future/" target="_blank">Andrej Karpathy</a>, March 2026</cite>
       </blockquote>
-
-      <p style="font-size:0.55em; margin-top:10px;">
-        <span class="accent">The pattern:</span> keep the core tiny, make it extensible via skills, iterate — add context, tools, and autonomy <em>gradually</em>.
+      <p style="font-size:0.5em; margin-top:8px;">
+        <span class="accent">The pattern:</span> tiny core, extensible via skills, iterate — add context, tools, and autonomy <em>gradually</em>.
       </p>
-      <p style="font-size:0.52em; color:var(--seafoam); margin-top:8px;">
+      <p style="font-size:0.48em; color:var(--seafoam);">
         Karpathy's <a href="https://github.com/karpathy/autoresearch" target="_blank">AutoResearch</a>: 630 lines. NanoClaw: ~500 lines. Same insight.
       </p>
     </div>
   </div>
 
   <aside class="notes">
-    Anthropic published guidance on effective harnesses for long-running agents. The harness manages permissions, state, tool orchestration, lifecycle. Karpathy built AutoResearch in 630 lines. NanoClaw: 500 lines. The key insight: you don't build a big app. You build a tiny harness and iteratively add skills, context, and tools. Context engineering — giving the agent the right information at the right time — is the real skill.
+    Anthropic published guidance on harnesses for long-running agents. The harness manages permissions, state, tools, lifecycle. Karpathy's AutoResearch: 630 lines. NanoClaw: 500. Key: don't build a big app. Build a tiny harness and iteratively add skills, context, tools. Context engineering is the real skill.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 5: NANOCLAW ARCHITECTURE
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 5: ARCHITECTURE ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="Host process handles messaging + routing. Each group gets its own isolated container. Containers are ephemeral — spawned per message, destroyed after. Docker partnership enables cross-platform.">NanoClaw Architecture</span></h2>
+  <h2><span class="hover-note" data-note="Host process handles messaging + routing. Each group = isolated container. Ephemeral: spawned per message, --rm after. Docker partnership for cross-platform.">NanoClaw Architecture</span></h2>
 
-  <svg viewBox="0 0 960 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:420px;">
+  <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:440px; margin-top:4px;">
     <defs>
-      <linearGradient id="hostGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#133454"/><stop offset="100%" stop-color="#0d2137"/>
-      </linearGradient>
-      <linearGradient id="containerGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a3a2a"/><stop offset="100%" stop-color="#0d2117"/>
-      </linearGradient>
+      <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#133454"/><stop offset="100%" stop-color="#0d2137"/></linearGradient>
+      <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3a2a"/><stop offset="100%" stop-color="#0d2117"/></linearGradient>
     </defs>
 
-    <!-- Host box -->
-    <rect x="10" y="10" width="940" height="210" rx="12" fill="url(#hostGrad)" stroke="#a8dadc" stroke-width="1.5" opacity="0.9"/>
-    <text x="30" y="34" fill="#a8dadc" font-size="12" font-weight="700" font-family="monospace">HOST (macOS) — Single Node.js Process</text>
+    <!-- Host -->
+    <rect x="5" y="5" width="890" height="195" rx="10" fill="url(#hg)" stroke="#a8dadc" stroke-width="1.5" opacity="0.9"/>
+    <text x="20" y="26" fill="#a8dadc" font-size="13" font-weight="700" font-family="monospace">HOST (macOS) — Single Node.js Process</text>
 
-    <!-- Telegram -->
-    <rect x="30" y="50" width="130" height="55" rx="8" fill="rgba(42,157,143,0.15)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="95" y="73" fill="#f1faee" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Telegram</text>
-    <text x="95" y="90" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">grammY</text>
+    <rect x="20" y="40" width="130" height="55" rx="7" fill="rgba(42,157,143,0.15)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="85" y="62" fill="#f1faee" font-size="12" font-weight="600" text-anchor="middle">Telegram</text>
+    <text x="85" y="80" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">grammY</text>
 
-    <!-- Extensible label -->
-    <rect x="30" y="115" width="130" height="35" rx="6" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="0.5" stroke-dasharray="3,3"/>
-    <text x="95" y="137" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">+ /add-slack, /add-discord...</text>
+    <rect x="20" y="105" width="130" height="35" rx="5" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <text x="85" y="127" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">+ /add-slack ...</text>
 
-    <!-- SQLite -->
-    <rect x="190" y="50" width="120" height="55" rx="8" fill="rgba(255,107,53,0.1)" stroke="#ff6b35" stroke-width="1"/>
-    <text x="250" y="73" fill="#f1faee" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">SQLite</text>
-    <text x="250" y="90" fill="#ff6b35" font-size="9" text-anchor="middle" font-family="monospace">messages.db</text>
+    <rect x="175" y="40" width="115" height="55" rx="7" fill="rgba(255,107,53,0.1)" stroke="#ff6b35" stroke-width="1"/>
+    <text x="232" y="62" fill="#f1faee" font-size="12" font-weight="600" text-anchor="middle">SQLite</text>
+    <text x="232" y="80" fill="#ff6b35" font-size="10" text-anchor="middle" font-family="monospace">messages.db</text>
 
-    <!-- Loops -->
-    <rect x="340" y="50" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="400" y="72" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">Message Loop</text>
-    <rect x="340" y="95" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="400" y="117" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">Scheduler</text>
-    <rect x="340" y="140" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="400" y="162" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">IPC Watcher</text>
+    <rect x="315" y="40" width="115" height="32" rx="5" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="372" y="61" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle">Message Loop</text>
+    <rect x="315" y="80" width="115" height="32" rx="5" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="372" y="101" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle">Scheduler</text>
+    <rect x="315" y="120" width="115" height="32" rx="5" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="372" y="141" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle">IPC Watcher</text>
 
-    <!-- Mount Security -->
-    <rect x="490" y="50" width="150" height="50" rx="8" fill="rgba(230,57,70,0.1)" stroke="#e63946" stroke-width="1"/>
-    <text x="565" y="72" fill="#e63946" font-size="10" font-weight="600" text-anchor="middle">Mount Security</text>
-    <text x="565" y="88" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">~/.config/nanoclaw/</text>
+    <rect x="455" y="40" width="145" height="50" rx="7" fill="rgba(230,57,70,0.1)" stroke="#e63946" stroke-width="1"/>
+    <text x="527" y="60" fill="#e63946" font-size="11" font-weight="600" text-anchor="middle">Mount Security</text>
+    <text x="527" y="78" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">~/.config/nanoclaw/</text>
 
-    <!-- MCP Servers -->
-    <rect x="670" y="50" width="270" height="120" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="805" y="72" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">MCP Servers</text>
-    <text x="805" y="90" fill="#2a9d8f" font-size="9" text-anchor="middle" font-family="monospace">kitchen-mcp  •  weather  •  gmail</text>
-    <text x="805" y="106" fill="#2a9d8f" font-size="9" text-anchor="middle" font-family="monospace">google-calendar  •  google-drive</text>
-    <text x="805" y="126" fill="#e9c46a" font-size="8" text-anchor="middle" font-family="monospace">+ any MCP server via .mcp.json</text>
+    <rect x="625" y="40" width="260" height="120" rx="7" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="755" y="60" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle">MCP Servers</text>
+    <text x="755" y="80" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">kitchen-mcp  •  weather  •  gmail</text>
+    <text x="755" y="98" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">google-calendar  •  google-drive</text>
+    <text x="755" y="118" fill="#e9c46a" font-size="9" text-anchor="middle" font-family="monospace">+ any MCP server via .mcp.json</text>
 
     <!-- Spawn arrow -->
-    <line x1="400" y1="185" x2="400" y2="245" stroke="#ff6b35" stroke-width="2" stroke-dasharray="6,3"/>
-    <text x="410" y="230" fill="#ff6b35" font-size="9" font-weight="600" font-family="monospace">spawns ephemeral container</text>
+    <line x1="372" y1="165" x2="372" y2="225" stroke="#ff6b35" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="380" y="210" fill="#ff6b35" font-size="10" font-weight="600" font-family="monospace">spawns ephemeral container (--rm)</text>
 
     <!-- Container zone -->
-    <rect x="10" y="250" width="940" height="220" rx="12" fill="url(#containerGrad)" stroke="#2a9d8f" stroke-width="1.5" opacity="0.9"/>
-    <text x="30" y="274" fill="#2a9d8f" font-size="12" font-weight="700" font-family="monospace">CONTAINERS — Apple Container (macOS) / Docker (Linux) — Isolated per group</text>
-    <text x="660" y="274" fill="#a8dadc" font-size="9" font-family="monospace">🐳 Docker partnership: cross-platform support</text>
+    <rect x="5" y="230" width="890" height="265" rx="10" fill="url(#cg)" stroke="#2a9d8f" stroke-width="1.5" opacity="0.9"/>
+    <text x="20" y="252" fill="#2a9d8f" font-size="13" font-weight="700" font-family="monospace">CONTAINERS — Apple Container (macOS) / Docker (Linux)</text>
+    <text x="600" y="252" fill="#a8dadc" font-size="10" font-family="monospace">🐳 Docker partnership: cross-platform</text>
 
     <!-- Container: main -->
-    <rect x="30" y="290" width="280" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="170" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">main (admin)</text>
-    <text x="50" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/project  (rw)  — full repo access</text>
-    <text x="50" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — group memory</text>
-    <text x="50" y="364" fill="#a8dadc" font-size="8" font-family="monospace">/home/node/.claude  (rw)  — isolated sessions</text>
-    <text x="50" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + Bash + WebSearch</text>
-    <text x="50" y="400" fill="#e9c46a" font-size="8" font-family="monospace">securityProfile: "trusted"</text>
-    <text x="50" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned on message, --rm after</text>
+    <rect x="20" y="268" width="275" height="215" rx="7" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="157" y="290" fill="#ff6b35" font-size="13" font-weight="700" text-anchor="middle">main (admin)</text>
+    <text x="35" y="312" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/project  (rw)</text>
+    <text x="35" y="330" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/group    (rw)</text>
+    <text x="35" y="348" fill="#a8dadc" font-size="10" font-family="monospace">/home/node/.claude  (rw)</text>
+    <text x="35" y="370" fill="#f1faee" font-size="10" font-family="monospace">Claude Agent SDK + all tools</text>
+    <text x="35" y="390" fill="#e9c46a" font-size="10" font-family="monospace">securityProfile: "trusted"</text>
+    <rect x="35" y="402" width="245" height="28" rx="4" fill="rgba(42,157,143,0.1)" stroke="#2a9d8f" stroke-width="0.5"/>
+    <text x="157" y="420" fill="#2a9d8f" font-size="10" font-style="italic" text-anchor="middle">Ephemeral: spawn → run → destroy</text>
 
     <!-- Container: family -->
-    <rect x="340" y="290" width="280" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="480" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">adam-family</text>
-    <text x="360" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — own folder only</text>
-    <text x="360" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/global   (ro)  — shared memory</text>
-    <text x="360" y="364" fill="#e63946" font-size="8" font-family="monospace">NO project root • NO other groups</text>
-    <text x="360" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + kitchen-mcp mount</text>
-    <text x="360" y="400" fill="#e9c46a" font-size="8" font-family="monospace">securityProfile: "restricted"</text>
-    <text x="360" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned on message, --rm after</text>
+    <rect x="315" y="268" width="275" height="215" rx="7" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="452" y="290" fill="#ff6b35" font-size="13" font-weight="700" text-anchor="middle">adam-family</text>
+    <text x="330" y="312" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/group    (rw)</text>
+    <text x="330" y="330" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/global   (ro)</text>
+    <text x="330" y="348" fill="#e63946" font-size="10" font-family="monospace">NO project root access</text>
+    <text x="330" y="370" fill="#f1faee" font-size="10" font-family="monospace">Claude SDK + kitchen-mcp</text>
+    <text x="330" y="390" fill="#e9c46a" font-size="10" font-family="monospace">securityProfile: "restricted"</text>
+    <rect x="330" y="402" width="245" height="28" rx="4" fill="rgba(42,157,143,0.1)" stroke="#2a9d8f" stroke-width="0.5"/>
+    <text x="452" y="420" fill="#2a9d8f" font-size="10" font-style="italic" text-anchor="middle">Ephemeral: spawn → run → destroy</text>
 
-    <!-- Container: telegram-news -->
-    <rect x="650" y="290" width="290" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="795" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">telegram-news</text>
-    <text x="670" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — own folder only</text>
-    <text x="670" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/global   (ro)  — shared memory</text>
-    <text x="670" y="364" fill="#e63946" font-size="8" font-family="monospace">NO project root • NO other groups</text>
-    <text x="670" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + RSS + browser</text>
-    <text x="670" y="400" fill="#e9c46a" font-size="8" font-family="monospace">Scheduled: fires on cron, summarizes news</text>
-    <text x="670" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned per task, --rm after</text>
+    <!-- Container: N -->
+    <rect x="610" y="268" width="275" height="215" rx="7" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="747" y="290" fill="#ff6b35" font-size="13" font-weight="700" text-anchor="middle">telegram-news</text>
+    <text x="625" y="312" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/group    (rw)</text>
+    <text x="625" y="330" fill="#a8dadc" font-size="10" font-family="monospace">/workspace/global   (ro)</text>
+    <text x="625" y="348" fill="#e63946" font-size="10" font-family="monospace">NO project root access</text>
+    <text x="625" y="370" fill="#f1faee" font-size="10" font-family="monospace">Claude SDK + RSS + browser</text>
+    <text x="625" y="390" fill="#e9c46a" font-size="10" font-family="monospace">Scheduled: cron-triggered</text>
+    <rect x="625" y="402" width="245" height="28" rx="4" fill="rgba(42,157,143,0.1)" stroke="#2a9d8f" stroke-width="0.5"/>
+    <text x="747" y="420" fill="#2a9d8f" font-size="10" font-style="italic" text-anchor="middle">Ephemeral: spawn → run → destroy</text>
   </svg>
 
   <aside class="notes">
-    Walk through the diagram. Host process handles Telegram messaging and routing. Each group gets its own container — a real Linux VM. Containers are EPHEMERAL: spawned per message, destroyed after with --rm. No persistent state inside the container. This is key: you only pay compute when something happens. NanoClaw recently partnered with Docker for cross-platform support — Apple Container on macOS, Docker on Linux.
+    Walk the diagram. Host: single Node process with Telegram, SQLite, scheduler. Each group gets its own container — a real Linux VM. Containers are EPHEMERAL: spawned per message, destroyed with --rm. Zero idle cost. Docker partnership enables cross-platform — Apple Container on macOS, Docker on Linux. Security is structural: a compromised family-chat agent literally cannot see other groups' data.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 6: SECURITY + CODE
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 6: SECURITY + CODE ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="The mount allowlist lives OUTSIDE the project directory — containers cannot modify their own security config. This is structural security.">Security: Size IS the Attack Surface</span></h2>
+  <h2><span class="hover-note" data-note="Mount allowlist lives OUTSIDE the project — containers cannot modify their own security config. Only 2 env vars exposed. This is structural security.">Security: Size IS the Attack Surface</span></h2>
 
   <div class="two-col">
     <div>
@@ -505,14 +397,13 @@
           <tr><td>Process</td><td>Shared Node.js</td><td class="kelp"><strong>VM per group</strong></td></tr>
           <tr><td>Credentials</td><td>All env vars</td><td class="kelp"><strong>2 vars allowlisted</strong></td></tr>
           <tr><td>Mounts</td><td>App path checks</td><td class="kelp"><strong>External allowlist</strong></td></tr>
-          <tr><td>Skills</td><td>ClawHub (12% malicious)</td><td class="kelp"><strong>Auditable .md files</strong></td></tr>
+          <tr><td>Skills</td><td>ClawHub (12% bad)</td><td class="kelp"><strong>Auditable .md</strong></td></tr>
           <tr><td>Audit</td><td>~400K lines</td><td class="kelp"><strong>~500 lines (8 min)</strong></td></tr>
         </tbody>
       </table>
     </div>
-
     <div>
-      <h3>container-runner.ts — mount isolation</h3>
+      <h3>container-runner.ts</h3>
       <pre><code class="language-typescript">if (isMain) {
   mounts.push({ hostPath: projectRoot,
     containerPath: '/workspace/project' });
@@ -525,7 +416,7 @@
 mounts.push({ hostPath: groupSessionsDir,
   containerPath: '/home/node/.claude' });
 
-// Only 2 env vars exposed to containers
+// Only 2 env vars exposed
 const allowedVars = [
   'CLAUDE_CODE_OAUTH_TOKEN',
   'ANTHROPIC_API_KEY'
@@ -534,176 +425,112 @@ const allowedVars = [
   </div>
 
   <aside class="notes">
-    Security comparison. OpenClaw does application-level sandboxing in a shared process — if one adapter is compromised, everything is exposed. NanoClaw uses OS-level containers. Each group is a separate Linux VM. The mount allowlist lives outside the project directory at ~/.config/nanoclaw/ — containers literally cannot modify their own security config. Only 2 environment variables are exposed. This is the actual code from container-runner.ts.
+    Security comparison. OpenClaw: shared process, app-level sandbox. NanoClaw: OS containers, separate VMs. Mount allowlist at ~/.config/nanoclaw/ — outside the project, containers can't modify their own security. Only 2 env vars exposed. This is the actual code from container-runner.ts.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 7: LIVE DEMO — NANOCLAW
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 7: ALWAYS-ON STACK ══════ -->
 <section>
-  <h2>Meet Andy <span class="live-badge">LIVE</span></h2>
+  <h2><span class="hover-note" data-note="Three launchd services, one Mac, zero cloud bills. Tailscale provides zero-trust mesh VPN. All apps served as PWAs accessible from iPhone home screen.">The Always-On Stack</span></h2>
 
-  <div class="two-col">
-    <div>
-      <h3>Event-Driven Triggers</h3>
-      <ul class="check" style="font-size:0.9em;">
-        <li>Telegram message → container spawns → agent responds</li>
-        <li>Scheduled cron task → autonomous action</li>
-        <li>Agent IPC → cross-group message delivery</li>
-      </ul>
+  <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:310px;">
+    <rect x="5" y="5" width="890" height="330" rx="10" fill="rgba(13,33,55,0.5)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="20" y="26" fill="#a8dadc" font-size="12" font-weight="700" font-family="monospace">MacBook Pro (headless) — Tailscale mesh VPN — zero cloud bills</text>
 
-      <h3 style="margin-top:12px;">Terminal Commands</h3>
-      <div class="demo-cmd">launchctl list | grep com.nanoclaw
-        <span class="cmd-tip">Shows the nanoclaw launchd service status. Should show PID and exit code 0.</span>
-      </div>
-      <div class="demo-cmd">tail -30 ~/Repos/personal/nanoclaw/logs/nanoclaw.log
-        <span class="cmd-tip">Live log output. Watch for "Spawning container agent" and "Container completed" lines when a message arrives.</span>
-      </div>
-      <div class="demo-cmd">python3 -m json.tool ~/Repos/personal/nanoclaw/data/registered_groups.json
-        <span class="cmd-tip">Shows all registered groups: main, adam-family, telegram-news. Note the platform and containerConfig fields.</span>
-      </div>
-      <div class="demo-cmd">python3 -m json.tool ~/Repos/personal/nanoclaw/data/sessions.json
-        <span class="cmd-tip">Active Claude session IDs per group. These enable conversation continuity — agent remembers context.</span>
-      </div>
-    </div>
+    <text x="20" y="50" fill="#e9c46a" font-size="11" font-weight="700" font-family="monospace">launchd services (always-on, auto-restart):</text>
 
-    <div>
-      <h3>launchd: Always-On Service</h3>
-      <pre><code class="language-xml">&lt;key&gt;Label&lt;/key&gt;
-&lt;string&gt;com.nanoclaw&lt;/string&gt;
-&lt;key&gt;RunAtLoad&lt;/key&gt;  &lt;!-- starts on boot --&gt;
-&lt;true/&gt;
-&lt;key&gt;KeepAlive&lt;/key&gt; &lt;!-- restarts on crash --&gt;
-&lt;true/&gt;</code></pre>
-      <p style="font-size:0.5em; color:var(--seafoam);">Survives reboots. Auto-restarts on crash. Running 24/7 for months.</p>
+    <rect x="20" y="62" width="275" height="115" rx="7" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="157" y="82" fill="#ff6b35" font-size="14" font-weight="700" text-anchor="middle">com.nanoclaw</text>
+    <text x="35" y="100" fill="#f1faee" font-size="10">Virtual assistant (Telegram)</text>
+    <text x="35" y="116" fill="#a8dadc" font-size="9" font-family="monospace">Ephemeral containers per group</text>
+    <text x="35" y="130" fill="#a8dadc" font-size="9" font-family="monospace">Scheduled tasks + MCP tools</text>
+    <text x="35" y="150" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">+ dashboard UI</text>
 
-      <h3 style="margin-top:10px;">Ephemeral Containers</h3>
-      <p style="font-size:0.52em;">Containers spawn <strong>only when needed</strong> — on message or cron trigger. Fresh environment each time (<code>--rm</code>). No idle resource consumption. State persists via mounted volumes, not in the container.</p>
-    </div>
-  </div>
+    <rect x="315" y="62" width="275" height="115" rx="7" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1.5"/>
+    <text x="452" y="82" fill="#2a9d8f" font-size="14" font-weight="700" text-anchor="middle">com.macserve</text>
+    <text x="330" y="100" fill="#f1faee" font-size="10">Server monitoring dashboard</text>
+    <text x="330" y="116" fill="#a8dadc" font-size="9" font-family="monospace">CPU, RAM, disk, battery, thermals</text>
+    <text x="330" y="130" fill="#a8dadc" font-size="9" font-family="monospace">launchd service management</text>
+    <text x="330" y="150" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">:4244 (PWA)</text>
 
-  <aside class="notes">
-    LIVE DEMO. Show the launchd service running. Tail the logs. Send a Telegram message to Andy and watch the container spawn in real-time. Show the registered groups — main, adam-family, telegram-news. Show sessions.json for conversation continuity. Key talking point: containers are ephemeral, spawned on demand, destroyed after. Zero idle cost.
-  </aside>
-</section>
+    <rect x="610" y="62" width="275" height="115" rx="7" fill="rgba(233,196,106,0.08)" stroke="#e9c46a" stroke-width="1.5"/>
+    <text x="747" y="82" fill="#e9c46a" font-size="14" font-weight="700" text-anchor="middle">life-os / kitchen</text>
+    <text x="625" y="100" fill="#f1faee" font-size="10">Family kitchen management</text>
+    <text x="625" y="116" fill="#a8dadc" font-size="9" font-family="monospace">Shopping, pantry, meal plans</text>
+    <text x="625" y="130" fill="#a8dadc" font-size="9" font-family="monospace">MCP server → NanoClaw</text>
+    <text x="625" y="150" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">:4245 (PWA) + PostgreSQL</text>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 8: THE ALWAYS-ON STACK
-     ══════════════════════════════════════════════════ -->
-<section>
-  <h2><span class="hover-note" data-note="Three launchd services, one Mac, zero cloud. Tailscale mesh VPN provides secure access from any device. All apps served as PWAs on iPhone.">The Always-On Stack</span></h2>
+    <rect x="20" y="195" width="865" height="40" rx="7" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="452" y="213" fill="#a8dadc" font-size="12" font-weight="700" text-anchor="middle">Tailscale Mesh VPN — hostname:port from any device • no port forwarding • no public IP</text>
+    <text x="452" y="229" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">Zero-trust: every connection authenticated end-to-end</text>
 
-  <svg viewBox="0 0 960 350" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:310px;">
-    <rect x="10" y="10" width="940" height="330" rx="12" fill="rgba(13,33,55,0.5)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="30" y="34" fill="#a8dadc" font-size="11" font-weight="700" font-family="monospace">MacBook Pro (headless) — Tailscale mesh VPN — zero cloud bills</text>
+    <rect x="155" y="255" width="220" height="45" rx="7" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1"/>
+    <text x="265" y="275" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">iPhone (PWAs on home screen)</text>
+    <text x="265" y="292" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">macserve + kitchen-app + Telegram</text>
 
-    <text x="30" y="58" fill="#e9c46a" font-size="10" font-weight="700" font-family="monospace">launchd services (always-on, auto-restart):</text>
+    <rect x="525" y="255" width="220" height="45" rx="7" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="635" y="275" fill="#2a9d8f" font-size="11" font-weight="700" text-anchor="middle">Laptop / Termius (SSH)</text>
+    <text x="635" y="292" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Full terminal via Tailscale</text>
 
-    <rect x="30" y="70" width="290" height="120" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1.5"/>
-    <text x="175" y="92" fill="#ff6b35" font-size="13" font-weight="700" text-anchor="middle">com.nanoclaw</text>
-    <text x="50" y="112" fill="#f1faee" font-size="9">Virtual assistant (Telegram)</text>
-    <text x="50" y="128" fill="#a8dadc" font-size="8" font-family="monospace">Ephemeral containers per group</text>
-    <text x="50" y="142" fill="#a8dadc" font-size="8" font-family="monospace">Scheduled tasks (cron/interval/once)</text>
-    <text x="50" y="156" fill="#a8dadc" font-size="8" font-family="monospace">MCP: kitchen, calendar, gmail, drive</text>
-    <text x="50" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">+ dashboard UI</text>
-
-    <rect x="340" y="70" width="290" height="120" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1.5"/>
-    <text x="485" y="92" fill="#2a9d8f" font-size="13" font-weight="700" text-anchor="middle">com.macserve</text>
-    <text x="360" y="112" fill="#f1faee" font-size="9">Server monitoring dashboard</text>
-    <text x="360" y="128" fill="#a8dadc" font-size="8" font-family="monospace">CPU, RAM, disk, battery, thermals</text>
-    <text x="360" y="142" fill="#a8dadc" font-size="8" font-family="monospace">launchd service management</text>
-    <text x="360" y="156" fill="#a8dadc" font-size="8" font-family="monospace">Telegram alerts (crashes, disk)</text>
-    <text x="360" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">:4244 (PWA)</text>
-
-    <rect x="650" y="70" width="290" height="120" rx="8" fill="rgba(233,196,106,0.08)" stroke="#e9c46a" stroke-width="1.5"/>
-    <text x="795" y="92" fill="#e9c46a" font-size="13" font-weight="700" text-anchor="middle">life-os / kitchen</text>
-    <text x="670" y="112" fill="#f1faee" font-size="9">Family kitchen management</text>
-    <text x="670" y="128" fill="#a8dadc" font-size="8" font-family="monospace">Shopping lists, pantry, meal plans</text>
-    <text x="670" y="142" fill="#a8dadc" font-size="8" font-family="monospace">Recipe management + cook logs</text>
-    <text x="670" y="156" fill="#a8dadc" font-size="8" font-family="monospace">MCP server → NanoClaw integration</text>
-    <text x="670" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">:4245 (PWA) + PostgreSQL</text>
-
-    <rect x="30" y="210" width="910" height="40" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="485" y="228" fill="#a8dadc" font-size="11" font-weight="700" text-anchor="middle">Tailscale Mesh VPN — hostname:port from any device • no port forwarding • no public IP</text>
-    <text x="485" y="244" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Zero-trust: every connection is authenticated end-to-end</text>
-
-    <rect x="200" y="270" width="210" height="45" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1"/>
-    <text x="305" y="290" fill="#ff6b35" font-size="10" font-weight="700" text-anchor="middle">iPhone (PWAs on home screen)</text>
-    <text x="305" y="305" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">macserve + kitchen-app + Telegram</text>
-
-    <rect x="550" y="270" width="210" height="45" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="655" y="290" fill="#2a9d8f" font-size="10" font-weight="700" text-anchor="middle">Laptop / Termius (SSH)</text>
-    <text x="655" y="305" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">Full terminal via Tailscale</text>
-
-    <line x1="305" y1="250" x2="305" y2="270" stroke="#ff6b35" stroke-width="1.5"/>
-    <line x1="655" y1="250" x2="655" y2="270" stroke="#2a9d8f" stroke-width="1.5"/>
+    <line x1="265" y1="235" x2="265" y2="255" stroke="#ff6b35" stroke-width="1.5"/>
+    <line x1="635" y1="235" x2="635" y2="255" stroke="#2a9d8f" stroke-width="1.5"/>
   </svg>
 
   <aside class="notes">
-    Three launchd services on one Mac. NanoClaw for the AI assistant, MacServe for monitoring, kitchen-app for family management. All served on ports over Tailscale — zero-trust mesh VPN. No port forwarding, no public IP, no cloud bills. I access all of these as Progressive Web Apps on my iPhone home screen.
+    Three launchd services on one Mac. NanoClaw for AI assistant, MacServe for monitoring, kitchen-app for family. All served over Tailscale — zero-trust mesh VPN. No port forwarding, no public IP, no cloud bills. PWAs on iPhone home screen feel like native apps.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 9: iPHONE COMMAND CENTER DEMO
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 8: LIVE DEMO ══════ -->
 <section>
-  <h2>iPhone Command Center <span class="live-badge">LIVE</span></h2>
+  <h2><span class="hover-note" data-note="Show iPhone first: PWAs, Telegram, Termius. Then switch to terminal, run demo.sh, send a Telegram message and watch container spawn in logs.">Live Demo <span class="live-badge">LIVE</span></span></h2>
 
   <div class="two-col">
     <div>
-      <h3>Demo Flow</h3>
+      <h3>1. iPhone Command Center</h3>
       <ul class="arrow" style="font-size:0.85em;">
-        <li><span class="accent hover-note" data-note="Open MacServe PWA from home screen. Show live CPU/RAM/disk metrics. Maybe restart the nanoclaw service to show it works.">MacServe PWA</span> — live dashboard, restart services</li>
-        <li><span class="accent hover-note" data-note="Open Kitchen App PWA. Show the current shopping list and meal plan for this week.">Kitchen App PWA</span> — shopping list, meal plan</li>
-        <li><span class="accent hover-note" data-note="Show Telegram chat with Andy. Show a recent alert notification. Reply to trigger the agent.">Telegram</span> — alert notifications, reply to Andy</li>
-        <li><span class="accent hover-note" data-note="Open Termius. SSH into Mac via Tailscale hostname. Run 'uptime' or 'launchctl list | grep com'.">Termius</span> — SSH into Mac via Tailscale</li>
+        <li><span class="accent hover-note" data-note="Open MacServe PWA from home screen. Show CPU/RAM/disk metrics. Restart nanoclaw service to show it works.">MacServe PWA</span> — live metrics, restart services</li>
+        <li><span class="accent hover-note" data-note="Open Kitchen App PWA. Show current shopping list and this week's meal plan.">Kitchen App PWA</span> — shopping list, meal plan</li>
+        <li><span class="accent hover-note" data-note="Show Telegram chat with Andy. Point out recent alerts. This is where you'll send the demo message.">Telegram</span> — Andy chat, alerts</li>
+        <li><span class="accent hover-note" data-note="Open Termius. SSH into Mac via Tailscale hostname. Run 'uptime' to prove it's the same machine.">Termius</span> — SSH via Tailscale</li>
       </ul>
+      <p style="font-size:0.48em; color:var(--seafoam); margin-top:6px;">PWAs on home screen. No app store. Just <code>hostname:port</code> over Tailscale.</p>
 
-      <h3 style="margin-top:10px;">Why PWAs?</h3>
-      <ul class="check" style="font-size:0.85em;">
-        <li>No app store. No deployment pipeline.</li>
-        <li>Add to Home Screen = native feel</li>
-        <li>Notifications via Telegram</li>
-      </ul>
+      <h3 style="margin-top:10px;">2. Send a Telegram Message</h3>
+      <p style="font-size:0.5em;">Message Andy from iPhone → watch the container spawn and respond in real-time.</p>
     </div>
 
     <div>
-      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:10px; padding:12px; margin-top:4px;">
-        <p style="font-size:0.6em; margin:0; color:var(--foam-white);">
-          Every service runs on <code>hostname:port</code> via Tailscale. No cloud. No API gateways.
-        </p>
-        <p style="font-size:0.55em; margin:8px 0 0; color:var(--crab-orange);">
-          The Mac IS the server. Tailscale IS the network. launchd IS the orchestrator.
-        </p>
-      </div>
+      <h3>3. Terminal: Event Monitor</h3>
+      <p style="font-size:0.48em; color:var(--seafoam); margin-bottom:6px;">Run the demo script in a visible terminal:</p>
+      <pre><code class="language-bash"># Run the interactive demo script
+./demo.sh
 
-      <h3 style="margin-top:10px;">Event-Driven Loop</h3>
-      <div class="flow-arrow" style="font-size:0.85em;">
-        <div class="step">Event<br><span style="font-size:0.8em">(message, cron)</span></div>
-        <div class="arr">→</div>
-        <div class="step active">Agent<br><span style="font-size:0.8em">(NanoClaw)</span></div>
-        <div class="arr">→</div>
-        <div class="step">Action<br><span style="font-size:0.8em">(notify, execute)</span></div>
+# It walks through:
+# 1. launchctl list | grep com.nanoclaw
+# 2. tail -30 nanoclaw/logs/nanoclaw.log
+# 3. Show registered groups (JSON)
+# 4. Show active sessions (JSON)
+# 5. Live tail — watch container spawn!</code></pre>
+
+      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:8px; padding:8px; margin-top:8px;">
+        <p style="font-size:0.48em; margin:0;"><span class="accent">The Mac IS the server.</span> Tailscale IS the network. launchd IS the orchestrator.</p>
       </div>
     </div>
   </div>
 
   <aside class="notes">
-    IPHONE MIRRORING DEMO. Show each app on the phone: MacServe dashboard with live metrics, Kitchen app with the shopping list, Telegram with Andy, Termius for SSH. Key takeaway: all served from one Mac over Tailscale, no cloud, no deployment pipeline. PWAs on the home screen feel like native apps.
+    LIVE DEMO. Start with iPhone mirroring: show MacServe dashboard, kitchen app shopping list, Telegram with Andy, Termius SSH. Then switch to terminal: run demo.sh which walks through each command interactively. Send a Telegram message to Andy and watch the logs for "Spawning container agent" in real-time. Key: ephemeral containers spawn on demand, zero idle cost.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 10: MCP BRIDGE
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 9: MCP BRIDGE ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="MCP = Model Context Protocol by Anthropic. Standardized way for AI agents to call tools. kitchen-mcp has 19 tools: recipes, pantry, shopping, meal plans.">MCP: Agent-to-World Bridge</span></h2>
+  <h2><span class="hover-note" data-note="MCP = Model Context Protocol by Anthropic. Standardized tool calling. kitchen-mcp: 19 tools. One Telegram message chains 5 tool calls.">MCP: Agent-to-World Bridge</span></h2>
 
   <div class="two-col">
     <div>
-      <h3>kitchen-mcp: 19 tools</h3>
+      <h3><a href="https://modelcontextprotocol.io" target="_blank">kitchen-mcp</a>: 19 tools</h3>
       <pre><code class="language-typescript">server.tool('search_recipes',
   'Search by cuisine, difficulty...',
   searchRecipesSchema.shape,
@@ -721,38 +548,34 @@ server.tool('check_pantry',
    category or expiring items.',
   checkPantrySchema.shape,
   wrap(checkPantry))</code></pre>
-      <p style="font-size:0.45em; color:var(--seafoam);">Built with <a href="https://modelcontextprotocol.io" target="_blank">@modelcontextprotocol/sdk</a></p>
     </div>
 
     <div>
       <h3>Real conversation (Telegram)</h3>
-      <div style="background:rgba(10,22,40,0.7); border-radius:8px; padding:10px; font-size:0.52em; line-height:1.6;">
-        <p><span class="sand">User:</span> @Andy what should we cook tonight? Quick.</p>
-        <p style="color:var(--seafoam);">→ <code>check_pantry</code> → <code>get_dietary_rules</code> → <code>search_recipes</code></p>
-        <p><span class="accent">Andy:</span> Based on pantry (chicken, rice, broccoli) and Sarah's dairy restriction — 3 options under 30 min...</p>
-        <p><span class="sand">User:</span> Go with #2. Add missing to the list.</p>
+      <div style="background:rgba(10,22,40,0.7); border-radius:8px; padding:8px; font-size:0.5em; line-height:1.55;">
+        <p><span class="sand">User:</span> @Andy what should we cook? Quick.</p>
+        <p style="color:var(--seafoam);">→ <code>check_pantry</code> → <code>search_recipes</code></p>
+        <p><span class="accent">Andy:</span> Chicken, rice, broccoli in pantry. 3 options under 30 min...</p>
+        <p><span class="sand">User:</span> Go with #2. Add missing to list.</p>
         <p style="color:var(--seafoam);">→ <code>create_meal_plan</code> → <code>generate_shopping_list</code></p>
         <p><span class="accent">Andy:</span> Done! Added 4 items to Superstore list.</p>
       </div>
-
-      <p style="font-size:0.48em; margin-top:8px; color:var(--seafoam);">
-        One Telegram conversation → 5 MCP tool calls → meal planned, shopping list ready.
+      <p style="font-size:0.45em; margin-top:6px; color:var(--seafoam);">
+        One Telegram message → 5 MCP tool calls → meal planned.
       </p>
     </div>
   </div>
 
   <aside class="notes">
-    MCP — Model Context Protocol by Anthropic. Standardized way for agents to call tools. Kitchen-mcp exposes 19 tools. One Telegram message chains pantry check, dietary rules, recipe search, meal planning, and shopping list generation. This is what context engineering looks like: giving the agent the right tools at the right time.
+    MCP — Model Context Protocol by Anthropic. Standardized tool calling for agents. Kitchen-mcp exposes 19 tools. One Telegram message chains pantry check, recipe search, meal plan, shopping list. This is context engineering in action: the agent has the right tools available at the right time.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 11: AUTONOMY SPECTRUM
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 10: AUTONOMY SPECTRUM ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="We're at near-autonomous. The trajectory: iteratively add skills, context, and tools. Each addition makes the agent more capable and more autonomous.">The Autonomy Spectrum</span></h2>
+  <h2><span class="hover-note" data-note="Near-autonomous today. Iterate: harness → skills → MCP tools → event triggers → context engineering. Each step adds capability.">The Autonomy Spectrum</span></h2>
 
-  <div class="spectrum" style="margin-top:14px;">
+  <div class="spectrum" style="margin-top:10px;">
     <div class="seg" style="background:#133454; flex:1;">Manual</div>
     <div class="seg" style="background:#1a4a3a; flex:1.5;">Assisted</div>
     <div class="seg" style="background:rgba(255,107,53,0.4); flex:2; border:2px solid var(--crab-orange);">Near-Autonomous</div>
@@ -760,48 +583,44 @@ server.tool('check_pantry',
     <div class="seg" style="background:rgba(233,196,106,0.2); flex:1;">Independent</div>
   </div>
 
-  <div class="two-col" style="margin-top:14px;">
+  <div class="two-col" style="margin-top:10px;">
     <div>
       <h3>Autonomous today</h3>
-      <ul class="check" style="font-size:0.9em;">
+      <ul class="check" style="font-size:0.88em;">
         <li>Scheduled tasks (news digest, reminders)</li>
         <li>Server monitoring + Telegram alerts</li>
         <li>Pantry tracking + shopping lists</li>
       </ul>
-
-      <h3 style="margin-top:10px;">Needs a human</h3>
-      <ul class="dash" style="font-size:0.9em;">
+      <h3 style="margin-top:8px;">Needs a human</h3>
+      <ul class="dash" style="font-size:0.88em;">
         <li>Initiating complex workflows</li>
         <li>Approving external actions</li>
         <li>Resolving ambiguity</li>
       </ul>
     </div>
-
     <div>
       <h3>The iterative approach</h3>
-      <ul class="arrow" style="font-size:0.9em;">
+      <ul class="arrow" style="font-size:0.88em;">
         <li><span class="accent">Step 1:</span> Deploy the harness (500 lines)</li>
-        <li><span class="accent">Step 2:</span> Add skills incrementally (<code>/add-telegram</code>)</li>
-        <li><span class="accent">Step 3:</span> Add MCP tools (kitchen, calendar, gmail)</li>
-        <li><span class="accent">Step 4:</span> Add scheduled tasks (autonomous behaviors)</li>
+        <li><span class="accent">Step 2:</span> Add skills (<code>/add-telegram</code>)</li>
+        <li><span class="accent">Step 3:</span> Add MCP tools (kitchen, calendar)</li>
+        <li><span class="accent">Step 4:</span> Add event triggers (cron, RSS feeds, webhooks)</li>
         <li><span class="accent">Step 5:</span> Refine context engineering (CLAUDE.md)</li>
       </ul>
-      <p style="font-size:0.5em; margin-top:8px; color:var(--sand);">
-        Each step adds capability. The cognitive layer for previously impossible use-cases builds up gradually.
+      <p style="font-size:0.47em; margin-top:6px; color:var(--sand);">
+        Each step adds capability. The cognitive layer builds up gradually.
       </p>
     </div>
   </div>
 
   <aside class="notes">
-    We're at near-autonomous on the spectrum. The key is the iterative approach: start with a tiny harness, add skills incrementally, add MCP tools, add scheduled tasks. Each addition makes the agent more capable. You don't build everything at once. You iterate. Context engineering — refining the CLAUDE.md files, the tools available, the scheduled behaviors — is the ongoing work.
+    Near-autonomous on the spectrum. The key: iterate. Start with a tiny harness, add skills, add MCP tools, add event triggers like cron, RSS feeds, webhooks. Each step adds capability. Context engineering — refining CLAUDE.md files, available tools, scheduled behaviors — is the ongoing work. You don't build everything at once.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 12: PROFESSIONAL APPLICATIONS
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 11: PROFESSIONAL ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="Same event→agent→action pattern maps to industrial use cases. Replace heuristic-based monitoring with contextual reasoning.">From Personal to Professional</span></h2>
+  <h2><span class="hover-note" data-note="Same event→agent→action pattern maps to industrial use cases. Pipeline monitoring, grid frequency. Heuristics replaced by contextual reasoning.">From Personal to Professional</span></h2>
 
   <div class="two-col">
     <div>
@@ -816,8 +635,7 @@ server.tool('check_pantry',
           <tr><td>launchd + Tailscale</td><td>Kubernetes + service mesh</td></tr>
         </tbody>
       </table>
-
-      <div class="flow-arrow" style="margin-top:10px;">
+      <div class="flow-arrow" style="margin-top:8px;">
         <div class="step">Event</div>
         <div class="arr">→</div>
         <div class="step active">Agent reasons</div>
@@ -825,75 +643,80 @@ server.tool('check_pantry',
         <div class="step">Act or escalate</div>
       </div>
     </div>
-
     <div>
-      <h3>Use case: Pipeline Monitoring</h3>
-      <p style="font-size:0.55em;">Pressure sensor event → agent loads historical data via MCP → analyzes anomaly pattern → <span class="accent">either isolates valve autonomously OR pages engineer with full context</span>.</p>
+      <h3>Pipeline Monitoring</h3>
+      <p style="font-size:0.5em;">Pressure sensor → agent loads history via MCP → <span class="accent">isolates valve autonomously OR pages engineer with context</span>.</p>
 
-      <h3 style="margin-top:10px;">Use case: Electricity Grid</h3>
-      <p style="font-size:0.55em;">Frequency deviation → agent checks load balance, weather forecast, demand schedule → <span class="accent">adjusts demand response OR escalates with recommendation</span>.</p>
+      <h3 style="margin-top:8px;">Electricity Grid</h3>
+      <p style="font-size:0.5em;">Frequency deviation → agent checks load, weather, demand → <span class="accent">adjusts demand response OR escalates with recommendation</span>.</p>
 
-      <div style="background:rgba(42,157,143,0.08); border:1px solid rgba(42,157,143,0.2); border-radius:8px; padding:10px; margin-top:10px;">
-        <p style="font-size:0.52em; margin:0;">
-          <strong>The shift:</strong> humans made heuristic decisions ("if pressure drops 10%, shut down"). Agents do <span class="accent">contextual reasoning</span> — checking history, correlations, runbooks — and escalate when uncertain.
+      <div style="background:rgba(42,157,143,0.08); border:1px solid rgba(42,157,143,0.2); border-radius:8px; padding:8px; margin-top:8px;">
+        <p style="font-size:0.48em; margin:0;">
+          <strong>The shift:</strong> heuristic rules ("if X then Y") → <span class="accent">contextual reasoning</span> with escalation on uncertainty.
         </p>
       </div>
     </div>
   </div>
 
   <aside class="notes">
-    Here's where personal meets professional. The same event-driven pattern maps directly to industrial applications. Pipeline monitoring: a pressure sensor event triggers an agent that loads historical data, analyzes the anomaly, and either isolates a valve autonomously or pages an engineer with full context. The key shift: humans used heuristic rules — if X then Y. Agents do contextual reasoning. They check history, look at correlations, consult runbooks. And critically: they escalate when uncertain rather than making a bad autonomous decision.
+    Same event-driven pattern maps to industrial applications. Pipeline monitoring: pressure event triggers agent, agent loads historical data via MCP tools, analyzes context, either acts autonomously or escalates. Electricity grid: frequency deviation triggers the same pattern. The key shift: humans used heuristic rules — if pressure drops 10%, shut down. Agents do contextual reasoning — check history, correlations, runbooks — and escalate when genuinely uncertain.
   </aside>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 13: CLOSING
-     ══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 12: CLOSING ══════ -->
 <section class="title-slide">
-  <div style="font-size:2em; margin-bottom:6px;">🦀</div>
-  <h2 style="margin-bottom:10px;">The Claw is Strong</h2>
+  <div style="font-size:1.8em; margin-bottom:4px;">🦀</div>
+  <h2 style="margin-bottom:8px;">The Claw is Strong</h2>
 
-  <div style="text-align:center; margin:10px 0;">
-    <div class="stat-grid" style="max-width:600px; margin:0 auto;">
+  <div style="text-align:center; margin:6px 0;">
+    <div class="stat-grid" style="max-width:550px; margin:0 auto;">
       <div class="stat-box">
-        <div class="number" style="font-size:1.6em;">~500</div>
+        <div class="number" style="font-size:1.4em;">~500</div>
         <div class="label">Lines of core code</div>
       </div>
       <div class="stat-box">
-        <div class="number" style="font-size:1.6em;">3</div>
+        <div class="number" style="font-size:1.4em;">3</div>
         <div class="label">Always-on services</div>
       </div>
       <div class="stat-box">
-        <div class="number" style="font-size:1.6em;">$0</div>
+        <div class="number" style="font-size:1.4em;">$0</div>
         <div class="label">Cloud infrastructure</div>
       </div>
     </div>
   </div>
 
-  <p style="font-size:0.55em; color:var(--seafoam); margin:10px 0;">Build the harness, not the app. Add context, tools, and autonomy iteratively.</p>
+  <p style="font-size:0.5em; color:var(--seafoam); margin:6px 0;">Build systems around harnesses. Add context, tools, and autonomy iteratively.</p>
 
-  <div style="font-size:0.5em; text-align:center;">
-    <table style="max-width:560px; margin:0 auto; text-align:left;">
-      <tbody>
-        <tr><td style="color:var(--crab-orange); font-weight:600; width:100px;">NanoClaw</td><td><a href="https://github.com/gavrielc/nanoclaw" target="_blank">github.com/gavrielc/nanoclaw</a></td></tr>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">MacServe</td><td><a href="https://github.com/QuentinAd/macserve" target="_blank">github.com/QuentinAd/macserve</a></td></tr>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">Kitchen</td><td><a href="https://github.com/QuentinAd/life-os" target="_blank">github.com/QuentinAd/life-os</a></td></tr>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">These slides</td><td><a href="https://QuentinAd.github.io/ait-claw-preso" target="_blank">QuentinAd.github.io/ait-claw-preso</a></td></tr>
-      </tbody>
-    </table>
+  <div style="display:flex; justify-content:center; align-items:center; gap:30px; margin:6px 0;">
+    <div style="font-size:0.46em; text-align:left;">
+      <table style="margin:0;">
+        <tbody>
+          <tr><td style="color:var(--crab-orange); font-weight:600; width:90px;">NanoClaw</td><td><a href="https://github.com/gavrielc/nanoclaw" target="_blank">github.com/gavrielc/nanoclaw</a></td></tr>
+          <tr><td style="color:var(--crab-orange); font-weight:600;">MacServe</td><td><a href="https://github.com/QuentinAd/macserve" target="_blank">github.com/QuentinAd/macserve</a></td></tr>
+          <tr><td style="color:var(--crab-orange); font-weight:600;">Kitchen</td><td><a href="https://github.com/QuentinAd/life-os" target="_blank">github.com/QuentinAd/life-os</a></td></tr>
+          <tr><td style="color:var(--crab-orange); font-weight:600;">Slides</td><td><a href="https://QuentinAd.github.io/ait-claw-preso" target="_blank">QuentinAd.github.io/ait-claw-preso</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="qr-container">
+      <svg viewBox="0 0 41 41" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+        <rect width="41" height="41" fill="white"/>
+        <path d="M4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM7,4H8V5H7zM8,4H9V5H8zM9,4H10V5H9zM10,4H11V5H10zM20,4H21V5H20zM22,4H23V5H22zM23,4H24V5H23zM24,4H25V5H24zM25,4H26V5H25zM27,4H28V5H27zM30,4H31V5H30zM31,4H32V5H31zM32,4H33V5H32zM33,4H34V5H33zM34,4H35V5H34zM35,4H36V5H35zM36,4H37V5H36zM4,5H5V6H4zM10,5H11V6H10zM13,5H14V6H13zM14,5H15V6H14zM19,5H20V6H19zM20,5H21V6H20zM22,5H23V6H22zM25,5H26V6H25zM28,5H29V6H28zM30,5H31V6H30zM36,5H37V6H36zM4,6H5V7H4zM6,6H7V7H6zM7,6H8V7H7zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM13,6H14V7H13zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM19,6H20V7H19zM24,6H25V7H24zM25,6H26V7H25zM26,6H27V7H26zM30,6H31V7H30zM32,6H33V7H32zM33,6H34V7H33zM34,6H35V7H34zM36,6H37V7H36zM4,7H5V8H4zM6,7H7V8H6zM7,7H8V8H7zM8,7H9V8H8zM10,7H11V8H10zM12,7H13V8H12zM13,7H14V8H13zM19,7H20V8H19zM22,7H23V8H22zM25,7H26V8H25zM28,7H29V8H28zM30,7H31V8H30zM32,7H33V8H32zM33,7H34V8H33zM34,7H35V8H34zM36,7H37V8H36zM4,8H5V9H4zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM13,8H14V9H13zM14,8H15V9H14zM15,8H16V9H15zM17,8H18V9H17zM18,8H19V9H18zM19,8H20V9H19zM20,8H21V9H20zM21,8H22V9H21zM24,8H25V9H24zM26,8H27V9H26zM30,8H31V9H30zM32,8H33V9H32zM33,8H34V9H33zM34,8H35V9H34zM36,8H37V9H36zM4,9H5V10H4zM10,9H11V10H10zM12,9H13V10H12zM14,9H15V10H14zM15,9H16V10H15zM22,9H23V10H22zM23,9H24V10H23zM25,9H26V10H25zM27,9H28V10H27zM28,9H29V10H28zM30,9H31V10H30zM36,9H37V10H36zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM9,10H10V11H9zM10,10H11V11H10zM12,10H13V11H12zM14,10H15V11H14zM16,10H17V11H16zM18,10H19V11H18zM20,10H21V11H20zM22,10H23V11H22zM24,10H25V11H24zM26,10H27V11H26zM28,10H29V11H28zM30,10H31V11H30zM31,10H32V11H31zM32,10H33V11H32zM33,10H34V11H33zM34,10H35V11H34zM35,10H36V11H35zM36,10H37V11H36zM12,11H13V12H12zM15,11H16V12H15zM16,11H17V12H16zM18,11H19V12H18zM20,11H21V12H20zM22,11H23V12H22zM23,11H24V12H23zM24,11H25V12H24zM25,11H26V12H25zM26,11H27V12H26zM27,11H28V12H27zM4,12H5V13H4zM6,12H7V13H6zM7,12H8V13H7zM8,12H9V13H8zM9,12H10V13H9zM10,12H11V13H10zM13,12H14V13H13zM16,12H17V13H16zM17,12H18V13H17zM18,12H19V13H18zM21,12H22V13H21zM23,12H24V13H23zM24,12H25V13H24zM26,12H27V13H26zM27,12H28V13H27zM30,12H31V13H30zM31,12H32V13H31zM32,12H33V13H32zM33,12H34V13H33zM34,12H35V13H34zM4,13H5V14H4zM7,13H8V14H7zM8,13H9V14H8zM11,13H12V14H11zM14,13H15V14H14zM15,13H16V14H15zM16,13H17V14H16zM17,13H18V14H17zM18,13H19V14H18zM20,13H21V14H20zM21,13H22V14H21zM23,13H24V14H23zM24,13H25V14H24zM27,13H28V14H27zM30,13H31V14H30zM31,13H32V14H31zM33,13H34V14H33zM34,13H35V14H34zM36,13H37V14H36zM4,14H5V15H4zM6,14H7V15H6zM7,14H8V15H7zM8,14H9V15H8zM10,14H11V15H10zM11,14H12V15H11zM12,14H13V15H12zM13,14H14V15H13zM14,14H15V15H14zM15,14H16V15H15zM16,14H17V15H16zM17,14H18V15H17zM18,14H19V15H18zM19,14H20V15H19zM20,14H21V15H20zM21,14H22V15H21zM24,14H25V15H24zM26,14H27V15H26zM28,14H29V15H28zM32,14H33V15H32zM34,14H35V15H34zM35,14H36V15H35zM4,15H5V16H4zM12,15H13V16H12zM15,15H16V16H15zM16,15H17V16H16zM17,15H18V16H17zM20,15H21V16H20zM21,15H22V16H21zM22,15H23V16H22zM27,15H28V16H27zM30,15H31V16H30zM32,15H33V16H32zM33,15H34V16H33zM34,15H35V16H34zM35,15H36V16H35zM36,15H37V16H36zM5,16H6V17H5zM6,16H7V17H6zM9,16H10V17H9zM10,16H11V17H10zM12,16H13V17H12zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM16,16H17V17H16zM18,16H19V17H18zM20,16H21V17H20zM23,16H24V17H23zM24,16H25V17H24zM25,16H26V17H25zM26,16H27V17H26zM27,16H28V17H27zM28,16H29V17H28zM29,16H30V17H29zM32,16H33V17H32zM33,16H34V17H33zM4,17H5V18H4zM5,17H6V18H5zM6,17H7V18H6zM7,17H8V18H7zM8,17H9V18H8zM17,17H18V18H17zM19,17H20V18H19zM22,17H23V18H22zM28,17H29V18H28zM30,17H31V18H30zM33,17H34V18H33zM35,17H36V18H35zM36,17H37V18H36zM4,18H5V19H4zM5,18H6V19H5zM9,18H10V19H9zM10,18H11V19H10zM11,18H12V19H11zM16,18H17V19H16zM17,18H18V19H17zM18,18H19V19H18zM19,18H20V19H19zM20,18H21V19H20zM24,18H25V19H24zM26,18H27V19H26zM29,18H30V19H29zM30,18H31V19H30zM31,18H32V19H31zM34,18H35V19H34zM35,18H36V19H35zM5,19H6V20H5zM6,19H7V20H6zM7,19H8V20H7zM11,19H12V20H11zM14,19H15V20H14zM15,19H16V20H15zM18,19H19V20H18zM19,19H20V20H19zM25,19H26V20H25zM27,19H28V20H27zM29,19H30V20H29zM30,19H31V20H30zM31,19H32V20H31zM33,19H34V20H33zM34,19H35V20H34zM6,20H7V21H6zM8,20H9V21H8zM9,20H10V21H9zM10,20H11V21H10zM12,20H13V21H12zM14,20H15V21H14zM17,20H18V21H17zM18,20H19V21H18zM19,20H20V21H19zM21,20H22V21H21zM26,20H27V21H26zM27,20H28V21H27zM28,20H29V21H28zM29,20H30V21H29zM31,20H32V21H31zM32,20H33V21H32zM36,20H37V21H36zM4,21H5V22H4zM5,21H6V22H5zM8,21H9V22H8zM12,21H13V22H12zM14,21H15V22H14zM16,21H17V22H16zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM27,21H28V22H27zM29,21H30V22H29zM30,21H31V22H30zM31,21H32V22H31zM33,21H34V22H33zM34,21H35V22H34zM36,21H37V22H36zM5,22H6V23H5zM7,22H8V23H7zM8,22H9V23H8zM10,22H11V23H10zM11,22H12V23H11zM12,22H13V23H12zM16,22H17V23H16zM17,22H18V23H17zM18,22H19V23H18zM19,22H20V23H19zM20,22H21V23H20zM22,22H23V23H22zM24,22H25V23H24zM25,22H26V23H25zM29,22H30V23H29zM31,22H32V23H31zM32,22H33V23H32zM34,22H35V23H34zM35,22H36V23H35zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM9,23H10V24H9zM15,23H16V24H15zM16,23H17V24H16zM17,23H18V24H17zM18,23H19V24H18zM20,23H21V24H20zM23,23H24V24H23zM24,23H25V24H24zM25,23H26V24H25zM26,23H27V24H26zM29,23H30V24H29zM31,23H32V24H31zM32,23H33V24H32zM33,23H34V24H33zM34,23H35V24H34zM35,23H36V24H35zM4,24H5V25H4zM7,24H8V25H7zM9,24H10V25H9zM10,24H11V25H10zM15,24H16V25H15zM17,24H18V25H17zM18,24H19V25H18zM22,24H23V25H22zM25,24H26V25H25zM28,24H29V25H28zM29,24H30V25H29zM32,24H33V25H32zM33,24H34V25H33zM35,24H36V25H35zM36,24H37V25H36zM4,25H5V26H4zM14,25H15V26H14zM18,25H19V26H18zM19,25H20V26H19zM20,25H21V26H20zM24,25H25V26H24zM25,25H26V26H25zM26,25H27V26H26zM27,25H28V26H27zM28,25H29V26H28zM29,25H30V26H29zM30,25H31V26H30zM34,25H35V26H34zM36,25H37V26H36zM4,26H5V27H4zM6,26H7V27H6zM7,26H8V27H7zM8,26H9V27H8zM9,26H10V27H9zM10,26H11V27H10zM12,26H13V27H12zM13,26H14V27H13zM21,26H22V27H21zM22,26H23V27H22zM23,26H24V27H23zM25,26H26V27H25zM33,26H34V27H33zM34,26H35V27H34zM35,26H36V27H35zM4,27H5V28H4zM9,27H10V28H9zM11,27H12V28H11zM12,27H13V28H12zM14,27H15V28H14zM17,27H18V28H17zM18,27H19V28H18zM20,27H21V28H20zM22,27H23V28H22zM23,27H24V28H23zM24,27H25V28H24zM25,27H26V28H25zM26,27H27V28H26zM27,27H28V28H27zM29,27H30V28H29zM32,27H33V28H32zM33,27H34V28H33zM34,27H35V28H34zM35,27H36V28H35zM36,27H37V28H36zM4,28H5V29H4zM8,28H9V29H8zM9,28H10V29H9zM10,28H11V29H10zM11,28H12V29H11zM13,28H14V29H13zM16,28H17V29H16zM21,28H22V29H21zM22,28H23V29H22zM23,28H24V29H23zM26,28H27V29H26zM27,28H28V29H27zM28,28H29V29H28zM29,28H30V29H29zM30,28H31V29H30zM31,28H32V29H31zM32,28H33V29H32zM33,28H34V29H33zM36,28H37V29H36zM12,29H13V30H12zM13,29H14V30H13zM14,29H15V30H14zM15,29H16V30H15zM17,29H18V30H17zM18,29H19V30H18zM20,29H21V30H20zM21,29H22V30H21zM22,29H23V30H22zM23,29H24V30H23zM24,29H25V30H24zM28,29H29V30H28zM32,29H33V30H32zM34,29H35V30H34zM36,29H37V30H36zM4,30H5V31H4zM5,30H6V31H5zM6,30H7V31H6zM7,30H8V31H7zM8,30H9V31H8zM9,30H10V31H9zM10,30H11V31H10zM13,30H14V31H13zM14,30H15V31H14zM18,30H19V31H18zM19,30H20V31H19zM20,30H21V31H20zM21,30H22V31H21zM26,30H27V31H26zM27,30H28V31H27zM28,30H29V31H28zM30,30H31V31H30zM32,30H33V31H32zM34,30H35V31H34zM4,31H5V32H4zM10,31H11V32H10zM12,31H13V32H12zM13,31H14V32H13zM15,31H16V32H15zM16,31H17V32H16zM17,31H18V32H17zM18,31H19V32H18zM19,31H20V32H19zM21,31H22V32H21zM22,31H23V32H22zM23,31H24V32H23zM24,31H25V32H24zM27,31H28V32H27zM28,31H29V32H28zM32,31H33V32H32zM33,31H34V32H33zM34,31H35V32H34zM4,32H5V33H4zM6,32H7V33H6zM7,32H8V33H7zM8,32H9V33H8zM10,32H11V33H10zM12,32H13V33H12zM13,32H14V33H13zM16,32H17V33H16zM17,32H18V33H17zM20,32H21V33H20zM23,32H24V33H23zM24,32H25V33H24zM25,32H26V33H25zM26,32H27V33H26zM28,32H29V33H28zM29,32H30V33H29zM30,32H31V33H30zM31,32H32V33H31zM32,32H33V33H32zM33,32H34V33H33zM35,32H36V33H35zM4,33H5V34H4zM6,33H7V34H6zM7,33H8V34H7zM8,33H9V34H8zM10,33H11V34H10zM12,33H13V34H12zM13,33H14V34H13zM14,33H15V34H14zM16,33H17V34H16zM17,33H18V34H17zM19,33H20V34H19zM21,33H22V34H21zM22,33H23V34H22zM25,33H26V34H25zM27,33H28V34H27zM28,33H29V34H28zM29,33H30V34H29zM32,33H33V34H32zM33,33H34V34H33zM34,33H35V34H34zM36,33H37V34H36zM4,34H5V35H4zM6,34H7V35H6zM7,34H8V35H7zM8,34H9V35H8zM10,34H11V35H10zM12,34H13V35H12zM14,34H15V35H14zM19,34H20V35H19zM20,34H21V35H20zM21,34H22V35H21zM24,34H25V35H24zM25,34H26V35H25zM26,34H27V35H26zM27,34H28V35H27zM28,34H29V35H28zM29,34H30V35H29zM30,34H31V35H30zM31,34H32V35H31zM33,34H34V35H33zM4,35H5V36H4zM10,35H11V36H10zM16,35H17V36H16zM18,35H19V36H18zM19,35H20V36H19zM22,35H23V36H22zM25,35H26V36H25zM32,35H33V36H32zM34,35H35V36H34zM4,36H5V37H4zM5,36H6V37H5zM6,36H7V37H6zM7,36H8V37H7zM8,36H9V37H8zM9,36H10V37H9zM10,36H11V37H10zM12,36H13V37H12zM13,36H14V37H13zM14,36H15V37H14zM15,36H16V37H15zM16,36H17V37H16zM19,36H20V37H19zM21,36H22V37H21zM27,36H28V37H27zM28,36H29V37H28zM29,36H30V37H29zM30,36H31V37H30zM31,36H32V37H31zM35,36H36V37H35z" fill="#0a1628"/>
+      </svg>
+    </div>
   </div>
 
-  <p class="author" style="margin-top:10px;">
+  <p class="author" style="margin-top:8px;">
     Quentin Adam &bull; AI/Data Engineer @ <span class="accent">Dakota Analytics</span> &bull; AI Tinkerers Calgary
   </p>
 
   <aside class="notes">
-    500 lines. Three services. Zero cloud bills. Build the harness, not the app. Add context, tools, and autonomy iteratively. Repo links are on screen and this presentation is available at the GitHub Pages URL. Thank you!
+    500 lines. Three services. Zero cloud bills. Build systems around harnesses. Add context, tools, and autonomy iteratively. Repo links on screen, QR code links to this presentation. Thank you!
   </aside>
 </section>
 
-</div><!-- /slides -->
-</div><!-- /reveal -->
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
