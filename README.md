@@ -1,6 +1,6 @@
 # Harness Engineering, Crustaceans & Near-Autonomous Agents
 
-Presentation for [AI Tinkerers Calgary](https://calgary.aitinkerers.org/) — March 27, 2026
+Presentation for [AI Tinkerers Calgary](https://calgary.aitinkerers.org/) — March 26, 2026
 
 **[View slides](https://quentinad.github.io/ait-claw-preso/)**
 
