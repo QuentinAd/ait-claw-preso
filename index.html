@@ -483,44 +483,44 @@ const allowedVars = [
 
 <!-- ══════ SLIDE 8: LIVE DEMO ══════ -->
 <section>
-  <h2><span class="hover-note" data-note="Show iPhone first: PWAs, Telegram, Termius. Then switch to terminal, run demo.sh, send a Telegram message and watch container spawn in logs.">Live Demo <span class="live-badge">LIVE</span></span></h2>
+  <h2><span class="hover-note" data-note="Show iPhone mirroring: PWAs on home screen, Telegram with Claw, Termius SSH. Then send a message to trigger the agent.">Live Demo <span class="live-badge">LIVE</span></span></h2>
 
   <div class="two-col">
     <div>
-      <h3>1. iPhone Command Center</h3>
-      <ul class="arrow" style="font-size:0.85em;">
-        <li><span class="accent hover-note" data-note="Open MacServe PWA from home screen. Show CPU/RAM/disk metrics. Restart nanoclaw service to show it works.">MacServe PWA</span> — live metrics, restart services</li>
+      <h3>iPhone Command Center</h3>
+      <ul class="arrow" style="font-size:0.88em;">
+        <li><span class="accent hover-note" data-note="Open MacServe PWA from home screen. Show CPU/RAM/disk metrics. Maybe restart the nanoclaw service.">MacServe PWA</span> — live metrics, restart services</li>
         <li><span class="accent hover-note" data-note="Open Kitchen App PWA. Show current shopping list and this week's meal plan.">Kitchen App PWA</span> — shopping list, meal plan</li>
-        <li><span class="accent hover-note" data-note="Show Telegram chat with Andy. Point out recent alerts. This is where you'll send the demo message.">Telegram</span> — Andy chat, alerts</li>
-        <li><span class="accent hover-note" data-note="Open Termius. SSH into Mac via Tailscale hostname. Run 'uptime' to prove it's the same machine.">Termius</span> — SSH via Tailscale</li>
+        <li><span class="accent hover-note" data-note="Show Telegram chat with Claw. Point out recent alerts. Send a message to trigger the agent.">Telegram</span> — chat with Claw, trigger agent</li>
+        <li><span class="accent hover-note" data-note="Open Termius. SSH into Mac via Tailscale hostname. Run 'uptime' to prove it's the same machine.">Termius</span> — SSH into Mac via Tailscale</li>
       </ul>
-      <p style="font-size:0.48em; color:var(--seafoam); margin-top:6px;">PWAs on home screen. No app store. Just <code>hostname:port</code> over Tailscale.</p>
 
-      <h3 style="margin-top:10px;">2. Send a Telegram Message</h3>
-      <p style="font-size:0.5em;">Message Andy from iPhone → watch the container spawn and respond in real-time.</p>
+      <p style="font-size:0.48em; color:var(--seafoam); margin-top:8px;">All PWAs on home screen. No app store. Just <code>hostname:port</code> over Tailscale.</p>
     </div>
 
     <div>
-      <h3>3. Terminal: Event Monitor</h3>
-      <p style="font-size:0.48em; color:var(--seafoam); margin-bottom:6px;">Run the demo script in a visible terminal:</p>
-      <pre><code class="language-bash"># Run the interactive demo script
-./demo.sh
+      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:10px; padding:12px; margin-top:4px;">
+        <p style="font-size:0.55em; margin:0; color:var(--foam-white);">
+          Every service runs on <code>hostname:port</code> via Tailscale. No cloud. No API gateways. No public IP.
+        </p>
+        <p style="font-size:0.5em; margin:8px 0 0; color:var(--crab-orange);">
+          The Mac IS the server. Tailscale IS the network. launchd IS the orchestrator.
+        </p>
+      </div>
 
-# It walks through:
-# 1. launchctl list | grep com.nanoclaw
-# 2. tail -30 nanoclaw/logs/nanoclaw.log
-# 3. Show registered groups (JSON)
-# 4. Show active sessions (JSON)
-# 5. Live tail — watch container spawn!</code></pre>
-
-      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:8px; padding:8px; margin-top:8px;">
-        <p style="font-size:0.48em; margin:0;"><span class="accent">The Mac IS the server.</span> Tailscale IS the network. launchd IS the orchestrator.</p>
+      <h3 style="margin-top:12px;">Event-Driven Loop</h3>
+      <div class="flow-arrow" style="font-size:0.9em;">
+        <div class="step">Event<br><span style="font-size:0.8em">(message, cron)</span></div>
+        <div class="arr">→</div>
+        <div class="step active">Agent<br><span style="font-size:0.8em">(NanoClaw)</span></div>
+        <div class="arr">→</div>
+        <div class="step">Action<br><span style="font-size:0.8em">(notify, execute)</span></div>
       </div>
     </div>
   </div>
 
   <aside class="notes">
-    LIVE DEMO. Start with iPhone mirroring: show MacServe dashboard, kitchen app shopping list, Telegram with Andy, Termius SSH. Then switch to terminal: run demo.sh which walks through each command interactively. Send a Telegram message to Andy and watch the logs for "Spawning container agent" in real-time. Key: ephemeral containers spawn on demand, zero idle cost.
+    LIVE DEMO with iPhone mirroring. Show MacServe dashboard with live metrics. Kitchen app shopping list. Telegram — send a message to Claw and watch it respond. Termius for SSH. Key point: all served from one Mac over Tailscale, no cloud, no deployment pipeline.
   </aside>
 </section>
 
@@ -553,12 +553,12 @@ server.tool('check_pantry',
     <div>
       <h3>Real conversation (Telegram)</h3>
       <div style="background:rgba(10,22,40,0.7); border-radius:8px; padding:8px; font-size:0.5em; line-height:1.55;">
-        <p><span class="sand">User:</span> @Andy what should we cook? Quick.</p>
+        <p><span class="sand">User:</span> @Claw what should we cook? Quick.</p>
         <p style="color:var(--seafoam);">→ <code>check_pantry</code> → <code>search_recipes</code></p>
-        <p><span class="accent">Andy:</span> Chicken, rice, broccoli in pantry. 3 options under 30 min...</p>
+        <p><span class="accent">Claw:</span> Chicken, rice, broccoli in pantry. 3 options under 30 min...</p>
         <p><span class="sand">User:</span> Go with #2. Add missing to list.</p>
         <p style="color:var(--seafoam);">→ <code>create_meal_plan</code> → <code>generate_shopping_list</code></p>
-        <p><span class="accent">Andy:</span> Done! Added 4 items to Superstore list.</p>
+        <p><span class="accent">Claw:</span> Done! Added 4 items to Superstore list.</p>
       </div>
       <p style="font-size:0.45em; margin-top:6px; color:var(--seafoam);">
         One Telegram message → 5 MCP tool calls → meal planned.
