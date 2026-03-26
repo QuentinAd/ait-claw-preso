@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
 <style>
-  /* ── Ocean / Crab Theme ─────────────────────────────────────────── */
   :root {
     --ocean-deep:    #0a1628;
     --ocean-mid:     #0d2137;
@@ -31,9 +30,10 @@
 
   .reveal .slides section {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 60%, var(--ocean-light) 100%);
-    padding: 40px 60px;
+    padding: 30px 50px;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .reveal h1, .reveal h2, .reveal h3 {
@@ -44,57 +44,44 @@
     letter-spacing: -0.02em;
   }
 
-  .reveal h1 { font-size: 2.4em; }
-  .reveal h2 { font-size: 1.6em; margin-bottom: 0.4em; }
-  .reveal h3 { font-size: 1.1em; color: var(--seafoam); font-weight: 600; }
+  .reveal h1 { font-size: 1.8em; margin-bottom: 0.3em; }
+  .reveal h2 { font-size: 1.3em; margin-bottom: 0.3em; }
+  .reveal h3 { font-size: 0.9em; color: var(--seafoam); font-weight: 600; margin-bottom: 0.2em; }
 
   .reveal p, .reveal li {
-    font-size: 0.72em;
-    line-height: 1.6;
+    font-size: 0.62em;
+    line-height: 1.5;
     color: rgba(241,250,238,0.88);
   }
 
-  .reveal ul { list-style: none; padding-left: 0; }
-  .reveal ul li::before {
-    content: "🦀 ";
-    font-size: 0.8em;
-    margin-right: 4px;
-  }
+  .reveal ul { list-style: none; padding-left: 0; margin: 6px 0; }
+  .reveal ul li { margin-bottom: 2px; }
+  .reveal ul li::before { content: "🦀 "; font-size: 0.8em; margin-right: 4px; }
   .reveal ul.no-crab li::before { content: ""; margin-right: 0; }
   .reveal ul.dash li::before { content: "— "; color: var(--crab-orange); }
   .reveal ul.check li::before { content: "✓ "; color: var(--kelp-green); }
   .reveal ul.arrow li::before { content: "→ "; color: var(--seafoam); }
 
-  /* Accent text */
   .accent { color: var(--crab-orange); font-weight: 600; }
   .seafoam { color: var(--seafoam); }
   .kelp { color: var(--kelp-green); }
   .sand { color: var(--sand); }
-  .coral { color: var(--coral); }
   .crab-red { color: var(--crab-red); }
 
-  /* Code blocks */
   .reveal pre {
     background: rgba(10, 22, 40, 0.85);
     border: 1px solid rgba(168,218,220,0.2);
     border-radius: 8px;
-    padding: 16px;
-    font-size: 0.48em;
+    padding: 12px;
+    font-size: 0.44em;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     width: 100%;
-    margin: 12px 0;
+    margin: 8px 0;
   }
 
-  .reveal code {
-    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
-  }
+  .reveal code { font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace; }
+  .reveal pre code { max-height: 400px; line-height: 1.4; }
 
-  .reveal pre code {
-    max-height: 480px;
-    line-height: 1.5;
-  }
-
-  /* Inline code */
   .reveal p code, .reveal li code {
     background: rgba(168,218,220,0.15);
     border-radius: 4px;
@@ -103,117 +90,50 @@
     color: var(--seafoam);
   }
 
-  /* Comparison tables */
-  .reveal table {
-    margin: 12px 0;
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 0.58em;
-  }
-
+  .reveal table { margin: 8px 0; border-collapse: collapse; width: 100%; font-size: 0.52em; }
   .reveal table th {
     background: rgba(255,107,53,0.15);
     color: var(--crab-orange);
     font-weight: 600;
     text-align: left;
-    padding: 10px 14px;
+    padding: 6px 10px;
     border-bottom: 2px solid rgba(255,107,53,0.3);
   }
-
-  .reveal table td {
-    padding: 8px 14px;
-    border-bottom: 1px solid rgba(168,218,220,0.1);
-    color: rgba(241,250,238,0.85);
-  }
-
+  .reveal table td { padding: 5px 10px; border-bottom: 1px solid rgba(168,218,220,0.1); color: rgba(241,250,238,0.85); }
   .reveal table tr:hover td { background: rgba(168,218,220,0.05); }
 
-  /* Stats / metric boxes */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 16px 0;
-  }
-
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
   .stat-box {
     background: rgba(168,218,220,0.08);
     border: 1px solid rgba(168,218,220,0.15);
     border-radius: 10px;
-    padding: 18px;
+    padding: 14px;
     text-align: center;
   }
+  .stat-box .number { font-size: 1.8em; font-weight: 800; color: var(--crab-orange); line-height: 1.1; }
+  .stat-box .label { font-size: 0.6em; color: var(--seafoam); margin-top: 4px; }
 
-  .stat-box .number {
-    font-size: 2em;
-    font-weight: 800;
-    color: var(--crab-orange);
-    line-height: 1.1;
-  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 
-  .stat-box .label {
-    font-size: 0.65em;
-    color: var(--seafoam);
-    margin-top: 4px;
-  }
-
-  /* Two-column layout */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-  }
-
-  .two-col-wide {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 30px;
-    align-items: start;
-  }
-
-  /* Architecture diagram styling */
-  .arch-diagram {
-    background: rgba(10, 22, 40, 0.7);
-    border: 1px solid rgba(168,218,220,0.2);
-    border-radius: 10px;
-    padding: 20px;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.52em;
-    line-height: 1.4;
-    white-space: pre;
-    overflow-x: auto;
-    color: var(--seafoam);
-  }
-
-  /* LIVE demo slide indicator */
   .live-badge {
     display: inline-block;
     background: var(--crab-red);
     color: white;
-    padding: 3px 12px;
+    padding: 2px 10px;
     border-radius: 4px;
-    font-size: 0.55em;
+    font-size: 0.5em;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     animation: pulse-live 2s ease-in-out infinite;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: 6px;
   }
+  @keyframes pulse-live { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
-  @keyframes pulse-live {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-
-  /* Slide number */
   .reveal .slide-number { color: var(--seafoam); font-size: 0.55em; }
-
-  /* Progress bar */
   .reveal .progress span { background: var(--crab-orange); }
 
-  /* Title slide special */
   .title-slide {
     text-align: center !important;
     display: flex !important;
@@ -221,178 +141,119 @@
     justify-content: center;
     align-items: center;
   }
+  .title-slide h1 { font-size: 1.7em; line-height: 1.15; margin-bottom: 10px; }
+  .title-crab { font-size: 2.5em; margin-bottom: 8px; filter: drop-shadow(0 0 20px rgba(255,107,53,0.4)); }
+  .subtitle { font-size: 0.62em; color: var(--seafoam); margin-top: 6px; }
+  .author { font-size: 0.55em; color: rgba(241,250,238,0.6); margin-top: 14px; }
 
-  .title-slide h1 {
-    font-size: 2.2em;
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-
-  .title-crab {
-    font-size: 3.5em;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 0 20px rgba(255,107,53,0.4));
-  }
-
-  .subtitle {
-    font-size: 0.7em;
-    color: var(--seafoam);
-    margin-top: 8px;
-  }
-
-  .author {
-    font-size: 0.6em;
-    color: rgba(241,250,238,0.6);
-    margin-top: 20px;
-  }
-
-  /* Watermark waves */
   .reveal .slides section::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
+    bottom: 0; left: 0; right: 0;
+    height: 40px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='rgba(168,218,220,0.04)' d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,30 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat;
     background-size: cover;
     pointer-events: none;
   }
 
-  /* Vertical slides separator */
   .reveal .slides section.stack { background: none; padding: 0; }
   .reveal .slides section.stack::after { display: none; }
 
-  /* Quote styling */
   blockquote {
     border-left: 4px solid var(--crab-orange);
-    padding: 12px 20px;
-    margin: 16px 0;
+    padding: 8px 16px;
+    margin: 10px 0;
     background: rgba(255,107,53,0.06);
     border-radius: 0 8px 8px 0;
     font-style: italic;
-    font-size: 0.68em;
+    font-size: 0.58em;
     color: rgba(241,250,238,0.9);
   }
+  blockquote cite { display: block; margin-top: 6px; font-style: normal; font-size: 0.85em; color: var(--crab-orange); }
 
-  blockquote cite {
-    display: block;
-    margin-top: 8px;
-    font-style: normal;
-    font-size: 0.85em;
-    color: var(--crab-orange);
+  /* Hover tooltip for presenter notes */
+  .hover-note {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted rgba(168,218,220,0.4);
   }
+  .hover-note::after {
+    content: attr(data-note);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10,22,40,0.95);
+    border: 1px solid var(--crab-orange);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.75em;
+    font-style: normal;
+    color: var(--foam-white);
+    white-space: normal;
+    width: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 100;
+    line-height: 1.4;
+  }
+  .hover-note:hover::after { opacity: 1; }
 
-  /* Demo command block */
+  /* Demo command with hover tooltip */
   .demo-cmd {
     background: rgba(42,157,143,0.1);
     border: 1px solid rgba(42,157,143,0.3);
-    border-radius: 8px;
-    padding: 14px 18px;
+    border-radius: 6px;
+    padding: 8px 12px;
     font-family: monospace;
-    font-size: 0.55em;
+    font-size: 0.48em;
     color: var(--kelp-green);
-    margin: 10px 0;
+    margin: 5px 0;
+    cursor: help;
+    position: relative;
   }
-
-  .demo-cmd::before {
-    content: "$ ";
-    color: var(--crab-orange);
-    font-weight: bold;
-  }
-
-  /* Comparison highlight */
-  .vs-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 20px;
-    align-items: center;
-    margin: 16px 0;
-  }
-
-  .vs-card {
-    background: rgba(168,218,220,0.06);
-    border: 1px solid rgba(168,218,220,0.15);
-    border-radius: 10px;
-    padding: 20px;
-  }
-
-  .vs-card.danger {
-    border-color: rgba(230,57,70,0.3);
-    background: rgba(230,57,70,0.05);
-  }
-
-  .vs-card.success {
-    border-color: rgba(42,157,143,0.3);
-    background: rgba(42,157,143,0.05);
-  }
-
-  .vs-label {
-    font-size: 1.8em;
-    color: var(--seafoam);
-    font-weight: 800;
-    text-align: center;
-  }
-
-  /* Flow arrow */
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 16px 0;
-    font-size: 0.65em;
-  }
-
-  .flow-arrow .step {
-    background: rgba(168,218,220,0.1);
-    border: 1px solid rgba(168,218,220,0.2);
-    border-radius: 8px;
-    padding: 10px 16px;
-    text-align: center;
+  .demo-cmd::before { content: "$ "; color: var(--crab-orange); font-weight: bold; }
+  .demo-cmd .cmd-tip {
+    position: absolute;
+    bottom: 110%;
+    left: 0;
+    background: rgba(10,22,40,0.95);
+    border: 1px solid var(--kelp-green);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 1em;
     color: var(--foam-white);
+    white-space: normal;
+    width: 320px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 100;
+    line-height: 1.4;
   }
+  .demo-cmd:hover .cmd-tip { opacity: 1; }
 
-  .flow-arrow .step.active {
-    border-color: var(--crab-orange);
-    background: rgba(255,107,53,0.1);
-  }
+  .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin: 10px 0; }
+  .vs-card { background: rgba(168,218,220,0.06); border: 1px solid rgba(168,218,220,0.15); border-radius: 10px; padding: 14px; }
+  .vs-card.danger { border-color: rgba(230,57,70,0.3); background: rgba(230,57,70,0.05); }
+  .vs-card.success { border-color: rgba(42,157,143,0.3); background: rgba(42,157,143,0.05); }
+  .vs-label { font-size: 1.5em; color: var(--seafoam); font-weight: 800; text-align: center; }
 
+  .flow-arrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 12px 0; font-size: 0.58em; }
+  .flow-arrow .step { background: rgba(168,218,220,0.1); border: 1px solid rgba(168,218,220,0.2); border-radius: 8px; padding: 8px 14px; text-align: center; color: var(--foam-white); }
+  .flow-arrow .step.active { border-color: var(--crab-orange); background: rgba(255,107,53,0.1); }
   .flow-arrow .arr { color: var(--crab-orange); font-size: 1.5em; }
 
-  /* Spectrum bar */
-  .spectrum {
-    display: flex;
-    height: 40px;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 12px 0;
-    font-size: 0.55em;
-    font-weight: 600;
-  }
+  .spectrum { display: flex; height: 36px; border-radius: 8px; overflow: hidden; margin: 10px 0; font-size: 0.5em; font-weight: 600; }
+  .spectrum .seg { display: flex; align-items: center; justify-content: center; color: white; padding: 0 10px; white-space: nowrap; }
 
-  .spectrum .seg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 0 12px;
-    white-space: nowrap;
-  }
+  .reveal a { color: var(--seafoam); text-decoration: underline; text-decoration-color: rgba(168,218,220,0.4); }
+  .reveal a:hover { color: var(--crab-orange); }
 
-  /* Fragment highlight */
-  .reveal .fragment.highlight-orange.visible { color: var(--crab-orange); }
-
-  /* Speaker notes styling */
-  .reveal .speaker-notes {
-    font-size: 0.8em;
-    line-height: 1.5;
-  }
-
-  /* Responsive tweaks for projector */
   @media (min-width: 1024px) {
-    .reveal h1 { font-size: 2.6em; }
-    .reveal h2 { font-size: 1.8em; }
+    .reveal h1 { font-size: 2em; }
+    .reveal h2 { font-size: 1.4em; }
   }
 </style>
 </head>
@@ -401,25 +262,24 @@
 <div class="reveal">
 <div class="slides">
 
-<!-- ═══════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════
      SLIDE 1: TITLE
-     ═══════════════════════════════════════════════════════════════════ -->
+     ══════════════════════════════════════════════════ -->
 <section class="title-slide">
   <div class="title-crab">🦀</div>
   <h1>Harness Engineering,<br>Crustaceans &amp;<br>Near-Autonomous Agents</h1>
-  <p class="subtitle">Building always-on AI agents that actually <span class="accent">run your life</span></p>
-  <p class="author">Quentin &bull; AI Tinkerers Calgary &bull; March 26, 2026</p>
+  <p class="subtitle">Event-driven AI agents: from personal infra to <span class="accent">professional applications</span></p>
+  <p class="author">Quentin Adam &bull; AI/Data Engineer @ <a href="https://dakotaanalytics.ca" target="_blank" style="color:var(--crab-orange);">Dakota Analytics</a> &bull; AI Tinkerers Calgary &bull; March 26, 2026</p>
   <aside class="notes">
-    Welcome everyone. Tonight I want to show you what happens when you stop treating AI as a chat window and start treating it as infrastructure. I'm going to show you real, always-on agents running on a Mac Mini under my desk — agents that manage my family's kitchen, monitor my server, and respond to WhatsApp messages while I sleep.
+    Welcome everyone. I'm Quentin Adam, AI/Data Engineer at Dakota Analytics. Tonight I'll show you what happens when you treat AI as always-on infrastructure, not just a chat window. I'm running real agents on a Mac — they monitor my server, manage my family kitchen, and respond to Telegram while I sleep. The pattern scales from personal to industrial. Let's dive in.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════
      SLIDE 2: THE CRAB REVOLUTION
-     ═══════════════════════════════════════════════════════════════════ -->
+     ══════════════════════════════════════════════════ -->
 <section>
-  <h2>The Crab Revolution 🦀</h2>
-  <p style="font-size:0.65em; color:var(--seafoam); margin-bottom:16px;">How a mascot spawned an ecosystem</p>
+  <h2><span class="hover-note" data-note="Claude Code's crab mascot inspired a community ecosystem. OpenClaw went big. NanoClaw went minimal. Both are crustacean-themed.">The Crab Revolution 🦀</span></h2>
 
   <div class="flow-arrow">
     <div class="step">
@@ -430,881 +290,605 @@
     <div class="arr">→</div>
     <div class="step">
       <strong style="color:var(--crab-orange)">OpenClaw</strong><br>
-      "Claude Code for your life"<br>
-      <span style="font-size:0.8em;color:var(--crab-red)">400K lines, 199K ★</span>
+      Full-featured life assistant<br>
+      <span style="font-size:0.8em;color:var(--crab-red)">~400K lines, 199K ★</span>
     </div>
     <div class="arr">→</div>
     <div class="step active">
       <strong style="color:var(--crab-orange)">NanoClaw</strong><br>
-      Minimal, secure, yours<br>
+      Minimal, secure, extensible<br>
       <span style="font-size:0.8em;color:var(--kelp-green)">~500 lines core</span>
     </div>
   </div>
 
   <blockquote>
     The community adopted the crab. Then the crustacean metaphors got... <em>out of claw.</em>
-    <cite>— Pinch of context for the uninitiated</cite>
+    <cite>— A pinch of context for the uninitiated</cite>
   </blockquote>
 
-  <p style="font-size:0.6em;">The real question: <span class="accent">how much code do you need to build an always-on personal AI agent?</span></p>
+  <p style="font-size:0.55em;"><span class="accent">The question:</span> how much code do you need for an always-on personal AI agent?</p>
 
   <aside class="notes">
-    Claude Code shipped with a crab mascot. The community ran with it. Peter Steinberger built OpenClaw — a massive open-source assistant connecting every messaging app to AI. Then NanoClaw asked: what if we did it in 500 lines? Let's look at why that matters.
+    Claude Code shipped with a crab mascot. The community ran with it. Peter Steinberger built OpenClaw — 400K lines connecting every messaging app. NanoClaw by Gavriel Cohen asked: what if we did it in 500 lines? The crustacean theme is fun but the real question is architectural.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 3: OPENCLAW — THE LEVIATHAN
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SLIDE 3: OPENCLAW vs NANOCLAW
+     ══════════════════════════════════════════════════ -->
 <section>
-  <h2>OpenClaw: The 400K-Line Leviathan</h2>
-
-  <div class="two-col">
-    <div>
-      <div class="stat-grid" style="grid-template-columns: 1fr 1fr;">
-        <div class="stat-box">
-          <div class="number">~400K</div>
-          <div class="label">Lines of Code</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">199K</div>
-          <div class="label">GitHub Stars</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">70+</div>
-          <div class="label">Dependencies</div>
-        </div>
-        <div class="stat-box">
-          <div class="number" style="color:var(--crab-red)">5,700</div>
-          <div class="label">Community Skills</div>
-        </div>
-      </div>
-
-      <h3>Architecture</h3>
-      <ul class="dash">
-        <li>Gateway (WebSocket on :18789) + Agent layer</li>
-        <li>Markdown files for persistent state</li>
-        <li>ClawHub skill registry</li>
-        <li>WhatsApp, Telegram, Slack, Discord, Signal, iMessage...</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 style="color:var(--crab-red);">But then...</h3>
-      <ul class="no-crab" style="font-size:0.9em;">
-        <li>🔴 <strong>CVE-2026-25253</strong> (CVSS 8.8) — WebSocket origin bypass → RCE</li>
-        <li>🔴 <strong>12% of ClawHub skills malicious</strong> — 341 of ~2,857 contained data exfiltration or prompt injection</li>
-        <li>🔴 Creator joined OpenAI — project handed to foundation</li>
-      </ul>
-      <p style="font-size:0.6em; margin-top:12px; color:var(--seafoam);">
-        More code = more attack surface. More community skills = more trust assumptions.
-      </p>
-    </div>
-  </div>
-
-  <aside class="notes">
-    OpenClaw is impressive — 199K stars, connects everything. But it's a 400K-line codebase with 70+ dependencies. The ClawHub skill registry had 12% malicious skills. A critical RCE vulnerability was found. This is what happens when you prioritize features over security boundaries. Let's see the alternative.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 4: NANOCLAW — 500 LINES OF FOCUS
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>NanoClaw: 500 Lines of <span class="accent">Focus</span></h2>
+  <h2><span class="hover-note" data-note="Key: NanoClaw uses OS-level isolation (containers) vs OpenClaw's app-level sandboxing. Skills over features.">OpenClaw vs NanoClaw</span></h2>
 
   <div class="vs-grid">
     <div class="vs-card danger">
-      <h3 style="text-align:center; margin-bottom:10px;">OpenClaw</h3>
-      <ul class="no-crab" style="font-size:0.85em;">
-        <li>~400,000 lines</li>
-        <li>70+ dependencies</li>
-        <li>Application-level sandboxing</li>
-        <li>Shared Node.js process</li>
-        <li>Community skill registry</li>
-        <li>8+ messaging adapters</li>
+      <h3 style="text-align:center; margin-bottom:8px;"><a href="https://github.com/openclaw/openclaw" target="_blank" style="color:var(--crab-red);">OpenClaw</a></h3>
+      <ul class="no-crab" style="font-size:0.82em;">
+        <li>🔴 ~400,000 lines / 70+ deps</li>
+        <li>🔴 Application-level sandboxing</li>
+        <li>🔴 Shared Node.js process</li>
+        <li>🔴 <a href="https://en.wikipedia.org/wiki/OpenClaw" target="_blank">CVE-2026-25253</a> (CVSS 8.8)</li>
+        <li>🔴 12% of ClawHub skills malicious</li>
       </ul>
     </div>
 
     <div class="vs-label">vs</div>
 
     <div class="vs-card success">
-      <h3 style="text-align:center; margin-bottom:10px;">NanoClaw</h3>
-      <ul class="no-crab" style="font-size:0.85em;">
-        <li>~500 lines core</li>
-        <li>6 dependencies</li>
-        <li><strong>OS-level container isolation</strong></li>
-        <li>One container per group</li>
-        <li>Claude Code skills (auditable)</li>
-        <li>WhatsApp + Telegram (extensible)</li>
+      <h3 style="text-align:center; margin-bottom:8px;"><a href="https://github.com/gavrielc/nanoclaw" target="_blank" style="color:var(--kelp-green);">NanoClaw</a></h3>
+      <ul class="no-crab" style="font-size:0.82em;">
+        <li>✅ ~500 lines core / 6 deps</li>
+        <li>✅ <strong>OS-level container isolation</strong></li>
+        <li>✅ Separate Linux VM per group</li>
+        <li>✅ Auditable in 8 minutes</li>
+        <li>✅ Skills = <code>.md</code> files (no registry)</li>
       </ul>
     </div>
   </div>
 
-  <blockquote>
-    "It all feels like a skill issue: not good enough instructions, no proper memory tool."
-    <cite>— Andrej Karpathy, on why agent failures are harness failures, not model failures</cite>
-  </blockquote>
+  <p style="font-size:0.52em; margin-top:8px;"><span class="accent">NanoClaw philosophy:</span> <em>"Don't add features. Add skills."</em> — Messaging channels (Telegram, Slack, Discord) are added via <code>/add-telegram</code> skills that transform your fork, keeping the core tiny.</p>
 
   <aside class="notes">
-    NanoClaw is ~500 lines of core TypeScript. Instead of application-level permission checks in a shared Node process, every agent group runs in its own Apple Container — a real Linux VM. The attack surface IS the code you can audit. You can read the entire NanoClaw core in 8 minutes. Try that with OpenClaw.
+    Side-by-side. OpenClaw has 400K lines in a shared process — one compromise and everything is exposed. NanoClaw uses real container isolation. The skills philosophy is key: instead of building in every messaging adapter, you add them via Claude Code skills. /add-telegram transforms your fork. The core stays small and auditable.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 5: HARNESS ENGINEERING
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SLIDE 4: HARNESS ENGINEERING
+     ══════════════════════════════════════════════════ -->
 <section>
-  <h2>Harness Engineering: <span class="seafoam">The Real Skill</span></h2>
-  <p style="font-size:0.6em; margin-bottom:14px;">2025 was agents. <span class="accent">2026 is agent harnesses.</span></p>
+  <h2><span class="hover-note" data-note="The harness is the system wrapping the AI model: permissions, state, tools, lifecycle. The model is not the hard part — the harness is.">Harness Engineering</span></h2>
+  <p style="font-size:0.52em; margin-bottom:10px;">2025 was agents. <span class="accent">2026 is agent harnesses.</span> — <a href="https://aakashgupta.medium.com/2025-was-agents-2026-is-agent-harnesses-heres-why-that-changes-everything-073e9877655e" target="_blank">source</a></p>
 
   <div class="two-col">
     <div>
       <h3>What is a harness?</h3>
-      <p style="font-size:0.65em;">The system that wraps around an AI model to manage <strong>long-running tasks reliably</strong>. The model generates responses. The harness handles everything else.</p>
-
-      <ul class="arrow" style="margin-top:12px;">
+      <p style="font-size:0.58em;">The system wrapping the AI model for <strong>reliable long-running tasks</strong>. (<a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank">Anthropic blog</a>)</p>
+      <ul class="arrow" style="margin-top:8px;">
         <li>Permissions &amp; sandboxing</li>
         <li>State persistence across sessions</li>
-        <li>Tool orchestration &amp; MCP servers</li>
-        <li>Lifecycle management (launchd, containers)</li>
-        <li>Error recovery &amp; graceful degradation</li>
-        <li>Memory &amp; context management</li>
+        <li>Tool orchestration (MCP servers)</li>
+        <li>Lifecycle (launchd, containers)</li>
+        <li>Context engineering — right context, right tools, right time</li>
       </ul>
     </div>
-
     <div>
-      <h3>Karpathy's insight</h3>
-      <blockquote style="font-size:0.85em;">
+      <blockquote>
         "I haven't written a single line of code myself since December 2025. I run 10-20 AI agents in parallel."
-        <cite>— Andrej Karpathy, March 2026</cite>
+        <cite>— <a href="https://fortune.com/2026/03/17/andrej-karpathy-loop-autonomous-ai-agents-future/" target="_blank">Andrej Karpathy</a>, March 2026</cite>
       </blockquote>
 
-      <h3 style="margin-top:14px;">AutoResearch: 630 lines</h3>
-      <p style="font-size:0.62em;">A contract between three files with strict ownership rules — human sets direction, agent executes autonomously.</p>
-
-      <p style="font-size:0.62em; margin-top:10px;">
-        <span class="accent">The pattern:</span> keep the core tiny, make it extensible via skills/contracts, let the AI do the heavy lifting.
+      <p style="font-size:0.55em; margin-top:10px;">
+        <span class="accent">The pattern:</span> keep the core tiny, make it extensible via skills, iterate — add context, tools, and autonomy <em>gradually</em>.
+      </p>
+      <p style="font-size:0.52em; color:var(--seafoam); margin-top:8px;">
+        Karpathy's <a href="https://github.com/karpathy/autoresearch" target="_blank">AutoResearch</a>: 630 lines. NanoClaw: ~500 lines. Same insight.
       </p>
     </div>
   </div>
 
   <aside class="notes">
-    Anthropic published guidance on "effective harnesses for long-running agents" in late 2025. The harness manages permissions, state, tool orchestration, and lifecycle. Karpathy's AutoResearch does this in 630 lines. NanoClaw does it in 500. The pattern is the same: tiny core, strict contracts, maximum extensibility via skills.
+    Anthropic published guidance on effective harnesses for long-running agents. The harness manages permissions, state, tool orchestration, lifecycle. Karpathy built AutoResearch in 630 lines. NanoClaw: 500 lines. The key insight: you don't build a big app. You build a tiny harness and iteratively add skills, context, and tools. Context engineering — giving the agent the right information at the right time — is the real skill.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 6: NANOCLAW ARCHITECTURE DIAGRAM
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SLIDE 5: NANOCLAW ARCHITECTURE
+     ══════════════════════════════════════════════════ -->
 <section>
-  <h2>NanoClaw Architecture</h2>
+  <h2><span class="hover-note" data-note="Host process handles messaging + routing. Each group gets its own isolated container. Containers are ephemeral — spawned per message, destroyed after. Docker partnership enables cross-platform.">NanoClaw Architecture</span></h2>
 
-  <svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:460px;">
+  <svg viewBox="0 0 960 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:420px;">
     <defs>
       <linearGradient id="hostGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#133454"/>
-        <stop offset="100%" stop-color="#0d2137"/>
+        <stop offset="0%" stop-color="#133454"/><stop offset="100%" stop-color="#0d2137"/>
       </linearGradient>
       <linearGradient id="containerGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a3a2a"/>
-        <stop offset="100%" stop-color="#0d2117"/>
+        <stop offset="0%" stop-color="#1a3a2a"/><stop offset="100%" stop-color="#0d2117"/>
       </linearGradient>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="2" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
     </defs>
 
-    <!-- Host macOS box -->
-    <rect x="10" y="10" width="940" height="240" rx="12" fill="url(#hostGrad)" stroke="#a8dadc" stroke-width="1.5" opacity="0.9"/>
-    <text x="30" y="38" fill="#a8dadc" font-size="13" font-weight="700" font-family="monospace">HOST (macOS) — Main Node.js Process</text>
-
-    <!-- WhatsApp -->
-    <rect x="30" y="55" width="140" height="70" rx="8" fill="rgba(42,157,143,0.15)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="100" y="82" fill="#f1faee" font-size="12" font-weight="600" text-anchor="middle" font-family="sans-serif">WhatsApp</text>
-    <text x="100" y="100" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">baileys</text>
+    <!-- Host box -->
+    <rect x="10" y="10" width="940" height="210" rx="12" fill="url(#hostGrad)" stroke="#a8dadc" stroke-width="1.5" opacity="0.9"/>
+    <text x="30" y="34" fill="#a8dadc" font-size="12" font-weight="700" font-family="monospace">HOST (macOS) — Single Node.js Process</text>
 
     <!-- Telegram -->
-    <rect x="30" y="135" width="140" height="70" rx="8" fill="rgba(42,157,143,0.15)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="100" y="162" fill="#f1faee" font-size="12" font-weight="600" text-anchor="middle" font-family="sans-serif">Telegram</text>
-    <text x="100" y="180" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">grammY</text>
+    <rect x="30" y="50" width="130" height="55" rx="8" fill="rgba(42,157,143,0.15)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="95" y="73" fill="#f1faee" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Telegram</text>
+    <text x="95" y="90" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">grammY</text>
+
+    <!-- Extensible label -->
+    <rect x="30" y="115" width="130" height="35" rx="6" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <text x="95" y="137" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">+ /add-slack, /add-discord...</text>
 
     <!-- SQLite -->
-    <rect x="210" y="55" width="130" height="70" rx="8" fill="rgba(255,107,53,0.1)" stroke="#ff6b35" stroke-width="1"/>
-    <text x="275" y="82" fill="#f1faee" font-size="12" font-weight="600" text-anchor="middle" font-family="sans-serif">SQLite</text>
-    <text x="275" y="100" fill="#ff6b35" font-size="10" text-anchor="middle" font-family="monospace">messages.db</text>
+    <rect x="190" y="50" width="120" height="55" rx="8" fill="rgba(255,107,53,0.1)" stroke="#ff6b35" stroke-width="1"/>
+    <text x="250" y="73" fill="#f1faee" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">SQLite</text>
+    <text x="250" y="90" fill="#ff6b35" font-size="9" text-anchor="middle" font-family="monospace">messages.db</text>
 
-    <!-- Message Loop -->
-    <rect x="380" y="55" width="130" height="45" rx="8" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="445" y="82" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Message Loop</text>
-
-    <!-- Scheduler -->
-    <rect x="380" y="110" width="130" height="45" rx="8" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="445" y="137" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Scheduler</text>
-
-    <!-- IPC Watcher -->
-    <rect x="380" y="165" width="130" height="45" rx="8" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="445" y="192" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">IPC Watcher</text>
+    <!-- Loops -->
+    <rect x="340" y="50" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="400" y="72" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">Message Loop</text>
+    <rect x="340" y="95" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="400" y="117" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">Scheduler</text>
+    <rect x="340" y="140" width="120" height="35" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="400" y="162" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">IPC Watcher</text>
 
     <!-- Mount Security -->
-    <rect x="550" y="55" width="160" height="60" rx="8" fill="rgba(230,57,70,0.1)" stroke="#e63946" stroke-width="1"/>
-    <text x="630" y="78" fill="#e63946" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Mount Security</text>
-    <text x="630" y="98" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">~/.config/nanoclaw/</text>
-
-    <!-- Secret Manager -->
-    <rect x="550" y="130" width="160" height="55" rx="8" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="630" y="153" fill="#e9c46a" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Secret Manager</text>
-    <text x="630" y="170" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Google Secret Mgr</text>
+    <rect x="490" y="50" width="150" height="50" rx="8" fill="rgba(230,57,70,0.1)" stroke="#e63946" stroke-width="1"/>
+    <text x="565" y="72" fill="#e63946" font-size="10" font-weight="600" text-anchor="middle">Mount Security</text>
+    <text x="565" y="88" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">~/.config/nanoclaw/</text>
 
     <!-- MCP Servers -->
-    <rect x="750" y="55" width="180" height="135" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="840" y="78" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">MCP Servers</text>
-    <text x="840" y="98" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">kitchen-mcp</text>
-    <text x="840" y="115" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">weather</text>
-    <text x="840" y="132" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">google-calendar</text>
-    <text x="840" y="149" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">google-drive</text>
-    <text x="840" y="166" fill="#2a9d8f" font-size="10" text-anchor="middle" font-family="monospace">gmail</text>
+    <rect x="670" y="50" width="270" height="120" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="805" y="72" fill="#a8dadc" font-size="10" font-weight="600" text-anchor="middle">MCP Servers</text>
+    <text x="805" y="90" fill="#2a9d8f" font-size="9" text-anchor="middle" font-family="monospace">kitchen-mcp  •  weather  •  gmail</text>
+    <text x="805" y="106" fill="#2a9d8f" font-size="9" text-anchor="middle" font-family="monospace">google-calendar  •  google-drive</text>
+    <text x="805" y="126" fill="#e9c46a" font-size="8" text-anchor="middle" font-family="monospace">+ any MCP server via .mcp.json</text>
 
-    <!-- Arrows host -->
-    <line x1="170" y1="90" x2="210" y2="90" stroke="#2a9d8f" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-    <line x1="170" y1="170" x2="210" y2="90" stroke="#2a9d8f" stroke-width="1.5"/>
-    <line x1="340" y1="90" x2="380" y2="78" stroke="#a8dadc" stroke-width="1.5"/>
-    <line x1="510" y1="80" x2="550" y2="80" stroke="#a8dadc" stroke-width="1"/>
-
-    <!-- Spawn arrow to containers -->
-    <line x1="445" y1="210" x2="445" y2="280" stroke="#ff6b35" stroke-width="2" stroke-dasharray="6,3" filter="url(#glow)"/>
-    <text x="455" y="265" fill="#ff6b35" font-size="10" font-weight="600" font-family="monospace">spawns container</text>
+    <!-- Spawn arrow -->
+    <line x1="400" y1="185" x2="400" y2="245" stroke="#ff6b35" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="410" y="230" fill="#ff6b35" font-size="9" font-weight="600" font-family="monospace">spawns ephemeral container</text>
 
     <!-- Container zone -->
-    <rect x="10" y="285" width="940" height="225" rx="12" fill="url(#containerGrad)" stroke="#2a9d8f" stroke-width="1.5" opacity="0.9"/>
-    <text x="30" y="312" fill="#2a9d8f" font-size="13" font-weight="700" font-family="monospace">APPLE CONTAINER (Linux VM) — Isolated per group</text>
+    <rect x="10" y="250" width="940" height="220" rx="12" fill="url(#containerGrad)" stroke="#2a9d8f" stroke-width="1.5" opacity="0.9"/>
+    <text x="30" y="274" fill="#2a9d8f" font-size="12" font-weight="700" font-family="monospace">CONTAINERS — Apple Container (macOS) / Docker (Linux) — Isolated per group</text>
+    <text x="660" y="274" fill="#a8dadc" font-size="9" font-family="monospace">🐳 Docker partnership: cross-platform support</text>
 
     <!-- Container: main -->
-    <rect x="30" y="325" width="280" height="170" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="170" y="348" fill="#ff6b35" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">main (admin)</text>
-    <text x="50" y="370" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/project  (rw)</text>
-    <text x="50" y="386" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/group    (rw)</text>
-    <text x="50" y="402" fill="#a8dadc" font-size="9" font-family="monospace">/home/node/.claude  (rw)</text>
-    <text x="50" y="418" fill="#a8dadc" font-size="9" font-family="monospace">/home/node/.ssh     (ro)</text>
-    <text x="50" y="440" fill="#f1faee" font-size="9" font-family="monospace">Claude Agent SDK + all tools</text>
-    <text x="50" y="456" fill="#f1faee" font-size="9" font-family="monospace">Bash, Read, Write, WebSearch...</text>
-    <text x="50" y="478" fill="#e9c46a" font-size="9" font-family="monospace">securityProfile: "trusted"</text>
+    <rect x="30" y="290" width="280" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="170" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">main (admin)</text>
+    <text x="50" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/project  (rw)  — full repo access</text>
+    <text x="50" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — group memory</text>
+    <text x="50" y="364" fill="#a8dadc" font-size="8" font-family="monospace">/home/node/.claude  (rw)  — isolated sessions</text>
+    <text x="50" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + Bash + WebSearch</text>
+    <text x="50" y="400" fill="#e9c46a" font-size="8" font-family="monospace">securityProfile: "trusted"</text>
+    <text x="50" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned on message, --rm after</text>
 
     <!-- Container: family -->
-    <rect x="340" y="325" width="280" height="170" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="480" y="348" fill="#ff6b35" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">family-chat</text>
-    <text x="360" y="370" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/group    (rw)</text>
-    <text x="360" y="386" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/global   (ro)</text>
-    <text x="360" y="402" fill="#a8dadc" font-size="9" font-family="monospace">/home/node/.claude  (rw)</text>
-    <text x="360" y="418" fill="#e63946" font-size="9" font-family="monospace">NO project root access</text>
-    <text x="360" y="440" fill="#f1faee" font-size="9" font-family="monospace">Claude Agent SDK + all tools</text>
-    <text x="360" y="456" fill="#f1faee" font-size="9" font-family="monospace">Bash (safe — sandboxed in VM!)</text>
-    <text x="360" y="478" fill="#e9c46a" font-size="9" font-family="monospace">securityProfile: "restricted"</text>
+    <rect x="340" y="290" width="280" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="480" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">adam-family</text>
+    <text x="360" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — own folder only</text>
+    <text x="360" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/global   (ro)  — shared memory</text>
+    <text x="360" y="364" fill="#e63946" font-size="8" font-family="monospace">NO project root • NO other groups</text>
+    <text x="360" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + kitchen-mcp mount</text>
+    <text x="360" y="400" fill="#e9c46a" font-size="8" font-family="monospace">securityProfile: "restricted"</text>
+    <text x="360" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned on message, --rm after</text>
 
-    <!-- Container: N -->
-    <rect x="650" y="325" width="280" height="170" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="790" y="348" fill="#ff6b35" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">telegram-news</text>
-    <text x="670" y="370" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/group    (rw)</text>
-    <text x="670" y="386" fill="#a8dadc" font-size="9" font-family="monospace">/workspace/global   (ro)</text>
-    <text x="670" y="402" fill="#a8dadc" font-size="9" font-family="monospace">/home/node/.claude  (rw)</text>
-    <text x="670" y="418" fill="#e63946" font-size="9" font-family="monospace">NO project root access</text>
-    <text x="670" y="440" fill="#f1faee" font-size="9" font-family="monospace">Claude Agent SDK + all tools</text>
-    <text x="670" y="456" fill="#f1faee" font-size="9" font-family="monospace">+ RSS parser, browser automation</text>
-    <text x="670" y="478" fill="#e9c46a" font-size="9" font-family="monospace">securityProfile: "restricted"</text>
+    <!-- Container: telegram-news -->
+    <rect x="650" y="290" width="290" height="165" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="795" y="312" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle">telegram-news</text>
+    <text x="670" y="332" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/group    (rw)  — own folder only</text>
+    <text x="670" y="348" fill="#a8dadc" font-size="8" font-family="monospace">/workspace/global   (ro)  — shared memory</text>
+    <text x="670" y="364" fill="#e63946" font-size="8" font-family="monospace">NO project root • NO other groups</text>
+    <text x="670" y="384" fill="#f1faee" font-size="8" font-family="monospace">Claude Agent SDK + RSS + browser</text>
+    <text x="670" y="400" fill="#e9c46a" font-size="8" font-family="monospace">Scheduled: fires on cron, summarizes news</text>
+    <text x="670" y="420" fill="#2a9d8f" font-size="8" font-style="italic" font-family="sans-serif">Ephemeral: spawned per task, --rm after</text>
   </svg>
 
   <aside class="notes">
-    Here's the full architecture. Host process handles messaging and routing. Each group gets its own Linux container via Apple Container. Main group has full project access, other groups are sandboxed to their own directory. Key insight: security is structural, not just code-level. A compromised family-chat agent literally cannot see other groups' data.
+    Walk through the diagram. Host process handles Telegram messaging and routing. Each group gets its own container — a real Linux VM. Containers are EPHEMERAL: spawned per message, destroyed after with --rm. No persistent state inside the container. This is key: you only pay compute when something happens. NanoClaw recently partnered with Docker for cross-platform support — Apple Container on macOS, Docker on Linux.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 7: SECURITY — SIZE IS THE SURFACE
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SLIDE 6: SECURITY + CODE
+     ══════════════════════════════════════════════════ -->
 <section>
-  <h2>Security: Size <span class="crab-red">IS</span> the Attack Surface</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Security Layer</th>
-        <th>OpenClaw</th>
-        <th>NanoClaw</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Isolation model</td>
-        <td>Application-level permission checks</td>
-        <td class="kelp"><strong>OS-level container isolation (Apple Container)</strong></td>
-      </tr>
-      <tr>
-        <td>Process boundary</td>
-        <td>Shared Node.js process</td>
-        <td class="kelp"><strong>Separate Linux VM per group</strong></td>
-      </tr>
-      <tr>
-        <td>Credential exposure</td>
-        <td>All env vars in shared context</td>
-        <td class="kelp"><strong>Allowlisted vars only (2 vars)</strong></td>
-      </tr>
-      <tr>
-        <td>Mount security</td>
-        <td>Application-level path checks</td>
-        <td class="kelp"><strong>External allowlist + symlink resolution</strong></td>
-      </tr>
-      <tr>
-        <td>Skill trust</td>
-        <td>ClawHub registry (12% malicious)</td>
-        <td class="kelp"><strong>Claude Code skills (auditable .md files)</strong></td>
-      </tr>
-      <tr>
-        <td>Auditability</td>
-        <td>~400K lines (weeks to audit)</td>
-        <td class="kelp"><strong>~500 lines core (8 minutes to read)</strong></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div style="margin-top:14px;">
-    <h3>NanoClaw's Blocked Mount Patterns</h3>
-    <pre><code class="language-typescript">const DEFAULT_BLOCKED_PATTERNS = [
-  '.ssh', '.gnupg', '.aws', '.azure', '.gcloud', '.kube',
-  '.docker', 'credentials', '.env', '.netrc', '.npmrc',
-  'id_rsa', 'id_ed25519', 'private_key', '.secret',
-];</code></pre>
-  </div>
-
-  <aside class="notes">
-    Here's the security comparison. OpenClaw does application-level sandboxing in a shared process — if one adapter is compromised, everything is. NanoClaw uses OS-level container isolation. The mount allowlist lives OUTSIDE the project directory so containers can't modify their own security config. These blocked patterns prevent accidental credential exposure.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 8: THE CODE — container-runner.ts
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>The Code: Container Isolation</h2>
-  <p style="font-size:0.58em; color:var(--seafoam);">container-runner.ts — How agents are spawned</p>
-
-  <pre><code class="language-typescript">// Each group gets isolated volume mounts
-function buildVolumeMounts(group: RegisteredGroup, isMain: boolean): VolumeMount[] {
-  const mounts: VolumeMount[] = [];
-
-  if (isMain) {
-    mounts.push({ hostPath: projectRoot,
-                   containerPath: '/workspace/project', readonly: false });
-    // SSH keys for git push (main only, read-only)
-    mounts.push({ hostPath: sshDir,
-                   containerPath: '/home/node/.ssh', readonly: true });
-  } else {
-    // Non-main groups: ONLY their own folder
-    mounts.push({ hostPath: path.join(GROUPS_DIR, group.folder),
-                   containerPath: '/workspace/group', readonly: false });
-    // Global memory (read-only)
-    mounts.push({ hostPath: globalDir,
-                   containerPath: '/workspace/global', readonly: true });
-  }
-
-  // Per-group isolated sessions (prevents cross-group session access)
-  mounts.push({ hostPath: groupSessionsDir,
-                 containerPath: '/home/node/.claude', readonly: false });
-
-  // Per-group IPC namespace (prevents cross-group privilege escalation)
-  mounts.push({ hostPath: groupIpcDir,
-                 containerPath: '/workspace/ipc', readonly: false });
-
-  // Only expose auth vars, not entire .env
-  const allowedVars = ['CLAUDE_CODE_OAUTH_TOKEN', 'ANTHROPIC_API_KEY'];
-  return mounts;
-}
-
-// Spawn the container
-const container = spawn('container', containerArgs, { stdio: ['pipe', 'pipe', 'pipe'] });
-container.stdin.write(JSON.stringify(input));
-container.stdin.end();</code></pre>
-
-  <aside class="notes">
-    This is the actual code. Each group gets its own mount namespace. Non-main groups cannot see the project root. Sessions are isolated per group. IPC directories are namespaced to prevent cross-group privilege escalation. The container is ephemeral — fresh environment per invocation.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 9: LIVE DEMO — NANOCLAW
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>Meet Andy <span class="live-badge">LIVE</span></h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">NanoClaw in action — WhatsApp + Telegram</p>
+  <h2><span class="hover-note" data-note="The mount allowlist lives OUTSIDE the project directory — containers cannot modify their own security config. This is structural security.">Security: Size IS the Attack Surface</span></h2>
 
   <div class="two-col">
     <div>
-      <h3>Demo: Event-Driven Triggers</h3>
-      <ul class="check">
-        <li>Send WhatsApp message → agent processes</li>
-        <li>Telegram notification → reply from phone</li>
-        <li>Scheduled task fires → autonomous action</li>
-        <li>IPC: agent sends message to another group</li>
-      </ul>
-
-      <h3 style="margin-top:16px;">Terminal Commands</h3>
-      <div class="demo-cmd">launchctl list | grep nanoclaw</div>
-      <div class="demo-cmd">tail -20 ~/Repos/personal/nanoclaw/logs/nanoclaw.log</div>
-      <div class="demo-cmd">cat ~/Repos/personal/nanoclaw/data/registered_groups.json | jq</div>
-    </div>
-
-    <div>
-      <h3>What to Watch For</h3>
-      <ul class="arrow">
-        <li>Container spawn per message (ephemeral!)</li>
-        <li>Session continuity (conversation context)</li>
-        <li>Typing indicator while processing</li>
-        <li>Multi-group isolation in action</li>
-      </ul>
-
-      <h3 style="margin-top:16px;">launchd Service</h3>
-      <pre><code class="language-xml">&lt;key&gt;Label&lt;/key&gt;
-&lt;string&gt;com.nanoclaw&lt;/string&gt;
-&lt;key&gt;RunAtLoad&lt;/key&gt;
-&lt;true/&gt;
-&lt;key&gt;KeepAlive&lt;/key&gt;
-&lt;true/&gt;</code></pre>
-      <p style="font-size:0.55em; color:var(--seafoam);">Always-on. Survives reboots. Auto-restarts on crash.</p>
-    </div>
-  </div>
-
-  <aside class="notes">
-    LIVE DEMO TIME. Show the launchd service running. Tail the logs. Send a WhatsApp message and watch the container spawn. Show the registered groups JSON. Key point: this has been running 24/7 on my Mac for months. launchd keeps it alive — RunAtLoad + KeepAlive means it starts on boot and restarts on crash.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 10: THE ALWAYS-ON STACK
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>The Always-On Stack</h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">Three services, one Mac, zero cloud bills</p>
-
-  <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:340px;">
-    <!-- Mac background -->
-    <rect x="10" y="10" width="940" height="360" rx="12" fill="rgba(13,33,55,0.5)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="30" y="36" fill="#a8dadc" font-size="12" font-weight="700" font-family="monospace">MacBook Pro (headless) — Tailscale mesh VPN</text>
-
-    <!-- launchd row -->
-    <text x="30" y="65" fill="#e9c46a" font-size="11" font-weight="700" font-family="monospace">launchd services (always-on, auto-restart):</text>
-
-    <!-- NanoClaw service -->
-    <rect x="30" y="80" width="290" height="140" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1.5"/>
-    <text x="175" y="105" fill="#ff6b35" font-size="14" font-weight="700" text-anchor="middle" font-family="sans-serif">com.nanoclaw</text>
-    <text x="50" y="125" fill="#f1faee" font-size="10" font-family="sans-serif">Virtual assistant (WhatsApp + Telegram)</text>
-    <text x="50" y="145" fill="#a8dadc" font-size="9" font-family="monospace">Apple Container agents per group</text>
-    <text x="50" y="160" fill="#a8dadc" font-size="9" font-family="monospace">Scheduled tasks (cron, interval, once)</text>
-    <text x="50" y="175" fill="#a8dadc" font-size="9" font-family="monospace">MCP: kitchen, calendar, gmail, drive</text>
-    <text x="50" y="195" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">:3847 (dashboard)</text>
-
-    <!-- MacServe service -->
-    <rect x="340" y="80" width="290" height="140" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1.5"/>
-    <text x="485" y="105" fill="#2a9d8f" font-size="14" font-weight="700" text-anchor="middle" font-family="sans-serif">com.macserve</text>
-    <text x="360" y="125" fill="#f1faee" font-size="10" font-family="sans-serif">Server monitoring dashboard</text>
-    <text x="360" y="145" fill="#a8dadc" font-size="9" font-family="monospace">CPU, RAM, disk, battery, thermals</text>
-    <text x="360" y="160" fill="#a8dadc" font-size="9" font-family="monospace">launchd service management</text>
-    <text x="360" y="175" fill="#a8dadc" font-size="9" font-family="monospace">Telegram alerts (crashes, disk warnings)</text>
-    <text x="360" y="195" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">:4244 (PWA)</text>
-
-    <!-- Life-OS service -->
-    <rect x="650" y="80" width="290" height="140" rx="8" fill="rgba(233,196,106,0.08)" stroke="#e9c46a" stroke-width="1.5"/>
-    <text x="795" y="105" fill="#e9c46a" font-size="14" font-weight="700" text-anchor="middle" font-family="sans-serif">life-os/kitchen</text>
-    <text x="670" y="125" fill="#f1faee" font-size="10" font-family="sans-serif">Family kitchen management</text>
-    <text x="670" y="145" fill="#a8dadc" font-size="9" font-family="monospace">Shopping lists, pantry, meal plans</text>
-    <text x="670" y="160" fill="#a8dadc" font-size="9" font-family="monospace">Recipe management + cook logs</text>
-    <text x="670" y="175" fill="#a8dadc" font-size="9" font-family="monospace">MCP server for NanoClaw integration</text>
-    <text x="670" y="195" fill="#2a9d8f" font-size="10" font-weight="600" font-family="monospace">:4245 (PWA) + PostgreSQL</text>
-
-    <!-- Tailscale / Network layer -->
-    <rect x="30" y="240" width="910" height="50" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="485" y="262" fill="#a8dadc" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">Tailscale Mesh VPN — Zero-trust network</text>
-    <text x="485" y="280" fill="#a8dadc" font-size="10" text-anchor="middle" font-family="monospace">hostname:port accessible from any device on the mesh • no port forwarding • no public IP</text>
-
-    <!-- iPhone -->
-    <rect x="200" y="305" width="210" height="50" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1"/>
-    <text x="305" y="328" fill="#ff6b35" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">iPhone (PWAs on home screen)</text>
-    <text x="305" y="345" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">macserve + kitchen-app + Telegram</text>
-
-    <!-- Laptop -->
-    <rect x="550" y="305" width="210" height="50" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="655" y="328" fill="#2a9d8f" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">Laptop / Termius (SSH)</text>
-    <text x="655" y="345" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Full terminal access via Tailscale</text>
-
-    <!-- Arrows from Tailscale to devices -->
-    <line x1="305" y1="290" x2="305" y2="305" stroke="#ff6b35" stroke-width="1.5"/>
-    <line x1="655" y1="290" x2="655" y2="305" stroke="#2a9d8f" stroke-width="1.5"/>
-  </svg>
-
-  <aside class="notes">
-    Three launchd services on one Mac. NanoClaw for the AI assistant, MacServe for server monitoring, kitchen-app for family management. All served on ports over Tailscale — zero-trust mesh VPN. No port forwarding, no public IP, no cloud bills. I access all of these as PWAs on my iPhone home screen. They feel like native apps.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 11: iPHONE COMMAND CENTER DEMO
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>iPhone Command Center <span class="live-badge">LIVE</span></h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">iPhone Mirroring — PWAs + Telegram + Termius</p>
-
-  <div class="two-col">
-    <div>
-      <h3>Demo Flow</h3>
-      <ul class="arrow" style="font-size:0.9em;">
-        <li><span class="accent">MacServe PWA</span> — live dashboard, restart services</li>
-        <li><span class="accent">Kitchen App PWA</span> — shopping list, meal plan</li>
-        <li><span class="accent">Telegram</span> — alert notifications, reply to Andy</li>
-        <li><span class="accent">Termius</span> — SSH into Mac via Tailscale</li>
-        <li><span class="accent">WhatsApp</span> — trigger agent from phone</li>
-      </ul>
-
-      <h3 style="margin-top:16px;">Why PWAs?</h3>
-      <ul class="check" style="font-size:0.9em;">
-        <li>No app store. No deployment pipeline.</li>
-        <li>Add to Home Screen = native feel</li>
-        <li>Works offline (service workers)</li>
-        <li>Push notifications via Telegram fallback</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>The Key Insight</h3>
-      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:10px; padding:16px; margin-top:8px;">
-        <p style="font-size:0.7em; margin:0; color:var(--foam-white);">
-          Every service runs on <code>hostname:port</code> accessible via Tailscale from anywhere. No cloud. No containers in the cloud. No API gateways.
-        </p>
-        <p style="font-size:0.65em; margin:10px 0 0; color:var(--crab-orange);">
-          The Mac IS the server. Tailscale IS the network. launchd IS the orchestrator.
-        </p>
-      </div>
-
-      <h3 style="margin-top:16px;">Event-Driven Loop</h3>
-      <div class="flow-arrow" style="font-size:0.85em;">
-        <div class="step">Event<br><span style="font-size:0.8em">(message, cron, alert)</span></div>
-        <div class="arr">→</div>
-        <div class="step active">Agent<br><span style="font-size:0.8em">(NanoClaw)</span></div>
-        <div class="arr">→</div>
-        <div class="step">Action<br><span style="font-size:0.8em">(notify, execute, escalate)</span></div>
-      </div>
-    </div>
-  </div>
-
-  <aside class="notes">
-    IPHONE MIRRORING DEMO. Show each app on the phone. MacServe dashboard — live metrics, restart a service. Kitchen app — show the shopping list. Telegram — show an alert and reply. Termius — SSH session. Key point: these are all served from the Mac over Tailscale. No cloud bills. The Mac is the server, Tailscale is the network, launchd is the orchestrator.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 12: THE MCP BRIDGE — KITCHEN EXAMPLE
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>MCP: The Agent-to-World Bridge</h2>
-  <p style="font-size:0.58em; color:var(--seafoam);">Model Context Protocol — how NanoClaw controls everything</p>
-
-  <div class="two-col">
-    <div>
-      <h3>kitchen-mcp: 19 tools</h3>
-      <pre><code class="language-typescript">server.tool('search_recipes',
-  'Search by query, cuisine, difficulty...',
-  searchRecipesSchema.shape,
-  wrap(searchRecipes))
-
-server.tool('generate_shopping_list',
-  'Auto-generate from meal plan. Aggregates
-   ingredients, subtracts pantry stock.',
-  generateShoppingListSchema.shape,
-  wrap(generateShoppingList))
-
-server.tool('check_pantry',
-  'Current inventory. Filter by category
-   or items expiring within N days.',
-  checkPantrySchema.shape,
-  wrap(checkPantry))</code></pre>
-    </div>
-
-    <div>
-      <h3>Real conversation</h3>
-      <div style="background:rgba(10,22,40,0.7); border-radius:10px; padding:14px; font-size:0.6em; line-height:1.7;">
-        <p><span class="sand">User (WhatsApp):</span> @Andy what should we cook tonight? We want something quick.</p>
-        <p style="color:var(--seafoam);">Andy calls <code>check_pantry</code>, <code>get_dietary_rules</code>, <code>search_recipes</code></p>
-        <p><span class="accent">Andy:</span> Based on your pantry (chicken, rice, broccoli) and Sarah's dairy restriction, here are 3 options under 30 min...</p>
-        <p><span class="sand">User:</span> Go with #2. Add missing items to the list.</p>
-        <p style="color:var(--seafoam);">Andy calls <code>create_meal_plan</code>, <code>generate_shopping_list</code></p>
-        <p><span class="accent">Andy:</span> Done! Meal plan updated. Added 4 items to your Superstore shopping list.</p>
-      </div>
-
-      <p style="font-size:0.55em; margin-top:10px; color:var(--seafoam);">
-        One WhatsApp conversation → pantry check → recipe search → meal plan → shopping list. All via MCP tools.
-      </p>
-    </div>
-  </div>
-
-  <aside class="notes">
-    MCP — Model Context Protocol — is how NanoClaw talks to external systems. The kitchen-mcp server exposes 19 tools. When you ask Andy to plan dinner, it chains pantry check → dietary rules → recipe search → meal plan → shopping list generation. All from one WhatsApp message. This is the power of tool-equipped agents.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 13: THE AUTONOMY SPECTRUM
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>The Autonomy Spectrum</h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">We're here ↓ ... and moving right fast</p>
-
-  <div class="spectrum" style="margin-top:20px;">
-    <div class="seg" style="background:#133454; flex:1;">Manual</div>
-    <div class="seg" style="background:#1a4a3a; flex:1.5;">Assisted</div>
-    <div class="seg" style="background:rgba(255,107,53,0.4); flex:2; border:2px solid var(--crab-orange);">Near-Autonomous ← we are here</div>
-    <div class="seg" style="background:rgba(42,157,143,0.3); flex:1.5;">Autonomous</div>
-    <div class="seg" style="background:rgba(233,196,106,0.2); flex:1;">Fully Independent</div>
-  </div>
-
-  <div class="two-col" style="margin-top:20px;">
-    <div>
-      <h3>What NanoClaw does autonomously today</h3>
-      <ul class="check">
-        <li>Scheduled tasks fire without human input</li>
-        <li>News aggregation + summarization</li>
-        <li>Calendar reminders + email triage</li>
-        <li>Pantry tracking + shopping list generation</li>
-        <li>Server monitoring + Telegram alerts</li>
-      </ul>
-
-      <h3 style="margin-top:12px;">What still needs a human</h3>
-      <ul class="dash">
-        <li>Initiating complex multi-step workflows</li>
-        <li>Approving purchases or external actions</li>
-        <li>Resolving ambiguity (which recipe?)</li>
-        <li>Security-sensitive operations</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>The trajectory</h3>
-      <blockquote>
-        "The agents are ready. The missing piece is human skill to wield them."
-        <cite>— Karpathy, March 2026</cite>
-      </blockquote>
-
-      <ul class="arrow" style="margin-top:14px;">
-        <li><span class="accent">Today:</span> event-driven, human-in-the-loop for decisions</li>
-        <li><span class="accent">6 months:</span> autonomous within bounded domains</li>
-        <li><span class="accent">12 months:</span> multi-agent coordination, self-improving harnesses</li>
-      </ul>
-
-      <p style="font-size:0.58em; margin-top:12px; color:var(--sand);">
-        The cognitive layer for previously impossible use-cases is here. It's just not evenly distributed yet.
-      </p>
-    </div>
-  </div>
-
-  <aside class="notes">
-    Where are we on the autonomy spectrum? Near-autonomous. NanoClaw fires scheduled tasks, aggregates news, manages shopping lists — all without me. But complex workflows still need a human trigger. The trajectory is clear: more autonomy by the day. Karpathy runs 20 agents in parallel. The harnesses are the bottleneck, not the models.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 14: FROM PERSONAL TO PROFESSIONAL
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>From Personal to <span class="accent">Professional</span></h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">Same patterns, industrial scale</p>
-
-  <div class="two-col">
-    <div>
-      <h3>The Pattern</h3>
       <table>
-        <thead>
-          <tr><th>Personal</th><th>Professional</th></tr>
-        </thead>
+        <thead><tr><th>Layer</th><th>OpenClaw</th><th>NanoClaw</th></tr></thead>
         <tbody>
-          <tr>
-            <td>WhatsApp message</td>
-            <td>SCADA telemetry event</td>
-          </tr>
-          <tr>
-            <td>Kitchen pantry check</td>
-            <td>Pipeline pressure anomaly</td>
-          </tr>
-          <tr>
-            <td>Telegram alert</td>
-            <td>PagerDuty escalation</td>
-          </tr>
-          <tr>
-            <td>Scheduled news digest</td>
-            <td>Shift report generation</td>
-          </tr>
-          <tr>
-            <td>MacServe monitoring</td>
-            <td>Grid frequency monitoring</td>
-          </tr>
-          <tr>
-            <td>launchd + Tailscale</td>
-            <td>Kubernetes + service mesh</td>
-          </tr>
+          <tr><td>Isolation</td><td>App-level perms</td><td class="kelp"><strong>OS containers</strong></td></tr>
+          <tr><td>Process</td><td>Shared Node.js</td><td class="kelp"><strong>VM per group</strong></td></tr>
+          <tr><td>Credentials</td><td>All env vars</td><td class="kelp"><strong>2 vars allowlisted</strong></td></tr>
+          <tr><td>Mounts</td><td>App path checks</td><td class="kelp"><strong>External allowlist</strong></td></tr>
+          <tr><td>Skills</td><td>ClawHub (12% malicious)</td><td class="kelp"><strong>Auditable .md files</strong></td></tr>
+          <tr><td>Audit</td><td>~400K lines</td><td class="kelp"><strong>~500 lines (8 min)</strong></td></tr>
         </tbody>
       </table>
     </div>
 
     <div>
-      <h3>Oil &amp; Gas / Energy</h3>
-      <ul class="arrow" style="font-size:0.9em;">
-        <li><span class="accent">Pipeline monitoring:</span> pressure sensors trigger event → agent analyzes pattern → autonomous isolation OR human escalation</li>
-        <li><span class="accent">Electricity grid:</span> frequency deviation → agent checks load balance → adjusts demand response OR pages operator</li>
-        <li><span class="accent">Well production:</span> decline curve anomaly → agent pulls offset well data → generates recommendation</li>
+      <h3>container-runner.ts — mount isolation</h3>
+      <pre><code class="language-typescript">if (isMain) {
+  mounts.push({ hostPath: projectRoot,
+    containerPath: '/workspace/project' });
+} else {
+  // Non-main: ONLY their own folder
+  mounts.push({ hostPath: groupDir,
+    containerPath: '/workspace/group' });
+}
+// Per-group isolated sessions
+mounts.push({ hostPath: groupSessionsDir,
+  containerPath: '/home/node/.claude' });
+
+// Only 2 env vars exposed to containers
+const allowedVars = [
+  'CLAUDE_CODE_OAUTH_TOKEN',
+  'ANTHROPIC_API_KEY'
+];</code></pre>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Security comparison. OpenClaw does application-level sandboxing in a shared process — if one adapter is compromised, everything is exposed. NanoClaw uses OS-level containers. Each group is a separate Linux VM. The mount allowlist lives outside the project directory at ~/.config/nanoclaw/ — containers literally cannot modify their own security config. Only 2 environment variables are exposed. This is the actual code from container-runner.ts.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 7: LIVE DEMO — NANOCLAW
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2>Meet Andy <span class="live-badge">LIVE</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Event-Driven Triggers</h3>
+      <ul class="check" style="font-size:0.9em;">
+        <li>Telegram message → container spawns → agent responds</li>
+        <li>Scheduled cron task → autonomous action</li>
+        <li>Agent IPC → cross-group message delivery</li>
       </ul>
 
-      <div style="background:rgba(42,157,143,0.08); border:1px solid rgba(42,157,143,0.2); border-radius:10px; padding:14px; margin-top:12px;">
+      <h3 style="margin-top:12px;">Terminal Commands</h3>
+      <div class="demo-cmd">launchctl list | grep com.nanoclaw
+        <span class="cmd-tip">Shows the nanoclaw launchd service status. Should show PID and exit code 0.</span>
+      </div>
+      <div class="demo-cmd">tail -30 ~/Repos/personal/nanoclaw/logs/nanoclaw.log
+        <span class="cmd-tip">Live log output. Watch for "Spawning container agent" and "Container completed" lines when a message arrives.</span>
+      </div>
+      <div class="demo-cmd">python3 -m json.tool ~/Repos/personal/nanoclaw/data/registered_groups.json
+        <span class="cmd-tip">Shows all registered groups: main, adam-family, telegram-news. Note the platform and containerConfig fields.</span>
+      </div>
+      <div class="demo-cmd">python3 -m json.tool ~/Repos/personal/nanoclaw/data/sessions.json
+        <span class="cmd-tip">Active Claude session IDs per group. These enable conversation continuity — agent remembers context.</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>launchd: Always-On Service</h3>
+      <pre><code class="language-xml">&lt;key&gt;Label&lt;/key&gt;
+&lt;string&gt;com.nanoclaw&lt;/string&gt;
+&lt;key&gt;RunAtLoad&lt;/key&gt;  &lt;!-- starts on boot --&gt;
+&lt;true/&gt;
+&lt;key&gt;KeepAlive&lt;/key&gt; &lt;!-- restarts on crash --&gt;
+&lt;true/&gt;</code></pre>
+      <p style="font-size:0.5em; color:var(--seafoam);">Survives reboots. Auto-restarts on crash. Running 24/7 for months.</p>
+
+      <h3 style="margin-top:10px;">Ephemeral Containers</h3>
+      <p style="font-size:0.52em;">Containers spawn <strong>only when needed</strong> — on message or cron trigger. Fresh environment each time (<code>--rm</code>). No idle resource consumption. State persists via mounted volumes, not in the container.</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    LIVE DEMO. Show the launchd service running. Tail the logs. Send a Telegram message to Andy and watch the container spawn in real-time. Show the registered groups — main, adam-family, telegram-news. Show sessions.json for conversation continuity. Key talking point: containers are ephemeral, spawned on demand, destroyed after. Zero idle cost.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 8: THE ALWAYS-ON STACK
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2><span class="hover-note" data-note="Three launchd services, one Mac, zero cloud. Tailscale mesh VPN provides secure access from any device. All apps served as PWAs on iPhone.">The Always-On Stack</span></h2>
+
+  <svg viewBox="0 0 960 350" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:310px;">
+    <rect x="10" y="10" width="940" height="330" rx="12" fill="rgba(13,33,55,0.5)" stroke="#a8dadc" stroke-width="1"/>
+    <text x="30" y="34" fill="#a8dadc" font-size="11" font-weight="700" font-family="monospace">MacBook Pro (headless) — Tailscale mesh VPN — zero cloud bills</text>
+
+    <text x="30" y="58" fill="#e9c46a" font-size="10" font-weight="700" font-family="monospace">launchd services (always-on, auto-restart):</text>
+
+    <rect x="30" y="70" width="290" height="120" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="175" y="92" fill="#ff6b35" font-size="13" font-weight="700" text-anchor="middle">com.nanoclaw</text>
+    <text x="50" y="112" fill="#f1faee" font-size="9">Virtual assistant (Telegram)</text>
+    <text x="50" y="128" fill="#a8dadc" font-size="8" font-family="monospace">Ephemeral containers per group</text>
+    <text x="50" y="142" fill="#a8dadc" font-size="8" font-family="monospace">Scheduled tasks (cron/interval/once)</text>
+    <text x="50" y="156" fill="#a8dadc" font-size="8" font-family="monospace">MCP: kitchen, calendar, gmail, drive</text>
+    <text x="50" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">+ dashboard UI</text>
+
+    <rect x="340" y="70" width="290" height="120" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1.5"/>
+    <text x="485" y="92" fill="#2a9d8f" font-size="13" font-weight="700" text-anchor="middle">com.macserve</text>
+    <text x="360" y="112" fill="#f1faee" font-size="9">Server monitoring dashboard</text>
+    <text x="360" y="128" fill="#a8dadc" font-size="8" font-family="monospace">CPU, RAM, disk, battery, thermals</text>
+    <text x="360" y="142" fill="#a8dadc" font-size="8" font-family="monospace">launchd service management</text>
+    <text x="360" y="156" fill="#a8dadc" font-size="8" font-family="monospace">Telegram alerts (crashes, disk)</text>
+    <text x="360" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">:4244 (PWA)</text>
+
+    <rect x="650" y="70" width="290" height="120" rx="8" fill="rgba(233,196,106,0.08)" stroke="#e9c46a" stroke-width="1.5"/>
+    <text x="795" y="92" fill="#e9c46a" font-size="13" font-weight="700" text-anchor="middle">life-os / kitchen</text>
+    <text x="670" y="112" fill="#f1faee" font-size="9">Family kitchen management</text>
+    <text x="670" y="128" fill="#a8dadc" font-size="8" font-family="monospace">Shopping lists, pantry, meal plans</text>
+    <text x="670" y="142" fill="#a8dadc" font-size="8" font-family="monospace">Recipe management + cook logs</text>
+    <text x="670" y="156" fill="#a8dadc" font-size="8" font-family="monospace">MCP server → NanoClaw integration</text>
+    <text x="670" y="175" fill="#2a9d8f" font-size="9" font-weight="600" font-family="monospace">:4245 (PWA) + PostgreSQL</text>
+
+    <rect x="30" y="210" width="910" height="40" rx="8" fill="rgba(168,218,220,0.06)" stroke="#a8dadc" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="485" y="228" fill="#a8dadc" font-size="11" font-weight="700" text-anchor="middle">Tailscale Mesh VPN — hostname:port from any device • no port forwarding • no public IP</text>
+    <text x="485" y="244" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Zero-trust: every connection is authenticated end-to-end</text>
+
+    <rect x="200" y="270" width="210" height="45" rx="8" fill="rgba(255,107,53,0.08)" stroke="#ff6b35" stroke-width="1"/>
+    <text x="305" y="290" fill="#ff6b35" font-size="10" font-weight="700" text-anchor="middle">iPhone (PWAs on home screen)</text>
+    <text x="305" y="305" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">macserve + kitchen-app + Telegram</text>
+
+    <rect x="550" y="270" width="210" height="45" rx="8" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="1"/>
+    <text x="655" y="290" fill="#2a9d8f" font-size="10" font-weight="700" text-anchor="middle">Laptop / Termius (SSH)</text>
+    <text x="655" y="305" fill="#a8dadc" font-size="8" text-anchor="middle" font-family="monospace">Full terminal via Tailscale</text>
+
+    <line x1="305" y1="250" x2="305" y2="270" stroke="#ff6b35" stroke-width="1.5"/>
+    <line x1="655" y1="250" x2="655" y2="270" stroke="#2a9d8f" stroke-width="1.5"/>
+  </svg>
+
+  <aside class="notes">
+    Three launchd services on one Mac. NanoClaw for the AI assistant, MacServe for monitoring, kitchen-app for family management. All served on ports over Tailscale — zero-trust mesh VPN. No port forwarding, no public IP, no cloud bills. I access all of these as Progressive Web Apps on my iPhone home screen.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 9: iPHONE COMMAND CENTER DEMO
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2>iPhone Command Center <span class="live-badge">LIVE</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Demo Flow</h3>
+      <ul class="arrow" style="font-size:0.85em;">
+        <li><span class="accent hover-note" data-note="Open MacServe PWA from home screen. Show live CPU/RAM/disk metrics. Maybe restart the nanoclaw service to show it works.">MacServe PWA</span> — live dashboard, restart services</li>
+        <li><span class="accent hover-note" data-note="Open Kitchen App PWA. Show the current shopping list and meal plan for this week.">Kitchen App PWA</span> — shopping list, meal plan</li>
+        <li><span class="accent hover-note" data-note="Show Telegram chat with Andy. Show a recent alert notification. Reply to trigger the agent.">Telegram</span> — alert notifications, reply to Andy</li>
+        <li><span class="accent hover-note" data-note="Open Termius. SSH into Mac via Tailscale hostname. Run 'uptime' or 'launchctl list | grep com'.">Termius</span> — SSH into Mac via Tailscale</li>
+      </ul>
+
+      <h3 style="margin-top:10px;">Why PWAs?</h3>
+      <ul class="check" style="font-size:0.85em;">
+        <li>No app store. No deployment pipeline.</li>
+        <li>Add to Home Screen = native feel</li>
+        <li>Notifications via Telegram</li>
+      </ul>
+    </div>
+
+    <div>
+      <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:10px; padding:12px; margin-top:4px;">
         <p style="font-size:0.6em; margin:0; color:var(--foam-white);">
-          <strong>The key shift:</strong> These workflows were once monitored by humans making heuristic-based decisions. Event-driven agents replace heuristics with <span class="accent">contextual reasoning</span> — and escalate when uncertain.
+          Every service runs on <code>hostname:port</code> via Tailscale. No cloud. No API gateways.
+        </p>
+        <p style="font-size:0.55em; margin:8px 0 0; color:var(--crab-orange);">
+          The Mac IS the server. Tailscale IS the network. launchd IS the orchestrator.
+        </p>
+      </div>
+
+      <h3 style="margin-top:10px;">Event-Driven Loop</h3>
+      <div class="flow-arrow" style="font-size:0.85em;">
+        <div class="step">Event<br><span style="font-size:0.8em">(message, cron)</span></div>
+        <div class="arr">→</div>
+        <div class="step active">Agent<br><span style="font-size:0.8em">(NanoClaw)</span></div>
+        <div class="arr">→</div>
+        <div class="step">Action<br><span style="font-size:0.8em">(notify, execute)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    IPHONE MIRRORING DEMO. Show each app on the phone: MacServe dashboard with live metrics, Kitchen app with the shopping list, Telegram with Andy, Termius for SSH. Key takeaway: all served from one Mac over Tailscale, no cloud, no deployment pipeline. PWAs on the home screen feel like native apps.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 10: MCP BRIDGE
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2><span class="hover-note" data-note="MCP = Model Context Protocol by Anthropic. Standardized way for AI agents to call tools. kitchen-mcp has 19 tools: recipes, pantry, shopping, meal plans.">MCP: Agent-to-World Bridge</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3>kitchen-mcp: 19 tools</h3>
+      <pre><code class="language-typescript">server.tool('search_recipes',
+  'Search by cuisine, difficulty...',
+  searchRecipesSchema.shape,
+  wrap(searchRecipes))
+
+server.tool('generate_shopping_list',
+  'Auto-generate from meal plan.
+   Aggregates ingredients, subtracts
+   pantry stock.',
+  generateShoppingListSchema.shape,
+  wrap(generateShoppingList))
+
+server.tool('check_pantry',
+  'Current inventory. Filter by
+   category or expiring items.',
+  checkPantrySchema.shape,
+  wrap(checkPantry))</code></pre>
+      <p style="font-size:0.45em; color:var(--seafoam);">Built with <a href="https://modelcontextprotocol.io" target="_blank">@modelcontextprotocol/sdk</a></p>
+    </div>
+
+    <div>
+      <h3>Real conversation (Telegram)</h3>
+      <div style="background:rgba(10,22,40,0.7); border-radius:8px; padding:10px; font-size:0.52em; line-height:1.6;">
+        <p><span class="sand">User:</span> @Andy what should we cook tonight? Quick.</p>
+        <p style="color:var(--seafoam);">→ <code>check_pantry</code> → <code>get_dietary_rules</code> → <code>search_recipes</code></p>
+        <p><span class="accent">Andy:</span> Based on pantry (chicken, rice, broccoli) and Sarah's dairy restriction — 3 options under 30 min...</p>
+        <p><span class="sand">User:</span> Go with #2. Add missing to the list.</p>
+        <p style="color:var(--seafoam);">→ <code>create_meal_plan</code> → <code>generate_shopping_list</code></p>
+        <p><span class="accent">Andy:</span> Done! Added 4 items to Superstore list.</p>
+      </div>
+
+      <p style="font-size:0.48em; margin-top:8px; color:var(--seafoam);">
+        One Telegram conversation → 5 MCP tool calls → meal planned, shopping list ready.
+      </p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    MCP — Model Context Protocol by Anthropic. Standardized way for agents to call tools. Kitchen-mcp exposes 19 tools. One Telegram message chains pantry check, dietary rules, recipe search, meal planning, and shopping list generation. This is what context engineering looks like: giving the agent the right tools at the right time.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 11: AUTONOMY SPECTRUM
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2><span class="hover-note" data-note="We're at near-autonomous. The trajectory: iteratively add skills, context, and tools. Each addition makes the agent more capable and more autonomous.">The Autonomy Spectrum</span></h2>
+
+  <div class="spectrum" style="margin-top:14px;">
+    <div class="seg" style="background:#133454; flex:1;">Manual</div>
+    <div class="seg" style="background:#1a4a3a; flex:1.5;">Assisted</div>
+    <div class="seg" style="background:rgba(255,107,53,0.4); flex:2; border:2px solid var(--crab-orange);">Near-Autonomous</div>
+    <div class="seg" style="background:rgba(42,157,143,0.3); flex:1.5;">Autonomous</div>
+    <div class="seg" style="background:rgba(233,196,106,0.2); flex:1;">Independent</div>
+  </div>
+
+  <div class="two-col" style="margin-top:14px;">
+    <div>
+      <h3>Autonomous today</h3>
+      <ul class="check" style="font-size:0.9em;">
+        <li>Scheduled tasks (news digest, reminders)</li>
+        <li>Server monitoring + Telegram alerts</li>
+        <li>Pantry tracking + shopping lists</li>
+      </ul>
+
+      <h3 style="margin-top:10px;">Needs a human</h3>
+      <ul class="dash" style="font-size:0.9em;">
+        <li>Initiating complex workflows</li>
+        <li>Approving external actions</li>
+        <li>Resolving ambiguity</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>The iterative approach</h3>
+      <ul class="arrow" style="font-size:0.9em;">
+        <li><span class="accent">Step 1:</span> Deploy the harness (500 lines)</li>
+        <li><span class="accent">Step 2:</span> Add skills incrementally (<code>/add-telegram</code>)</li>
+        <li><span class="accent">Step 3:</span> Add MCP tools (kitchen, calendar, gmail)</li>
+        <li><span class="accent">Step 4:</span> Add scheduled tasks (autonomous behaviors)</li>
+        <li><span class="accent">Step 5:</span> Refine context engineering (CLAUDE.md)</li>
+      </ul>
+      <p style="font-size:0.5em; margin-top:8px; color:var(--sand);">
+        Each step adds capability. The cognitive layer for previously impossible use-cases builds up gradually.
+      </p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    We're at near-autonomous on the spectrum. The key is the iterative approach: start with a tiny harness, add skills incrementally, add MCP tools, add scheduled tasks. Each addition makes the agent more capable. You don't build everything at once. You iterate. Context engineering — refining the CLAUDE.md files, the tools available, the scheduled behaviors — is the ongoing work.
+  </aside>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SLIDE 12: PROFESSIONAL APPLICATIONS
+     ══════════════════════════════════════════════════ -->
+<section>
+  <h2><span class="hover-note" data-note="Same event→agent→action pattern maps to industrial use cases. Replace heuristic-based monitoring with contextual reasoning.">From Personal to Professional</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Same pattern, industrial scale</h3>
+      <table>
+        <thead><tr><th>Personal</th><th>Professional</th></tr></thead>
+        <tbody>
+          <tr><td>Telegram message</td><td>SCADA telemetry event</td></tr>
+          <tr><td>Kitchen pantry check</td><td>Pipeline pressure anomaly</td></tr>
+          <tr><td>Telegram alert</td><td>PagerDuty escalation</td></tr>
+          <tr><td>MacServe monitoring</td><td>Grid frequency monitoring</td></tr>
+          <tr><td>launchd + Tailscale</td><td>Kubernetes + service mesh</td></tr>
+        </tbody>
+      </table>
+
+      <div class="flow-arrow" style="margin-top:10px;">
+        <div class="step">Event</div>
+        <div class="arr">→</div>
+        <div class="step active">Agent reasons</div>
+        <div class="arr">→</div>
+        <div class="step">Act or escalate</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Use case: Pipeline Monitoring</h3>
+      <p style="font-size:0.55em;">Pressure sensor event → agent loads historical data via MCP → analyzes anomaly pattern → <span class="accent">either isolates valve autonomously OR pages engineer with full context</span>.</p>
+
+      <h3 style="margin-top:10px;">Use case: Electricity Grid</h3>
+      <p style="font-size:0.55em;">Frequency deviation → agent checks load balance, weather forecast, demand schedule → <span class="accent">adjusts demand response OR escalates with recommendation</span>.</p>
+
+      <div style="background:rgba(42,157,143,0.08); border:1px solid rgba(42,157,143,0.2); border-radius:8px; padding:10px; margin-top:10px;">
+        <p style="font-size:0.52em; margin:0;">
+          <strong>The shift:</strong> humans made heuristic decisions ("if pressure drops 10%, shut down"). Agents do <span class="accent">contextual reasoning</span> — checking history, correlations, runbooks — and escalate when uncertain.
         </p>
       </div>
     </div>
   </div>
 
   <aside class="notes">
-    Here's where it gets interesting for business. The exact same event-driven pattern I use at home maps directly to industrial applications. WhatsApp message becomes SCADA event. Kitchen pantry becomes pipeline pressure. The architecture is identical: event triggers agent, agent reasons contextually, agent acts or escalates. In Oil & Gas, this replaces human operators making heuristic decisions — if pressure drops 10%, shut down. Instead: agent analyzes the full context, checks historical data, makes a nuanced decision, and only escalates when genuinely uncertain.
+    Here's where personal meets professional. The same event-driven pattern maps directly to industrial applications. Pipeline monitoring: a pressure sensor event triggers an agent that loads historical data, analyzes the anomaly, and either isolates a valve autonomously or pages an engineer with full context. The key shift: humans used heuristic rules — if X then Y. Agents do contextual reasoning. They check history, look at correlations, consult runbooks. And critically: they escalate when uncertain rather than making a bad autonomous decision.
   </aside>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 15: SERVERLESS EVENT-DRIVEN AGENTS
-     ═══════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>Serverless Event-Driven Agents</h2>
-  <p style="font-size:0.6em; color:var(--seafoam);">The architecture scales from Mac to cloud</p>
-
-  <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-height:340px;">
-    <!-- Events column -->
-    <text x="80" y="30" fill="#e9c46a" font-size="13" font-weight="700" text-anchor="middle" font-family="sans-serif">Events</text>
-
-    <rect x="10" y="45" width="140" height="40" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="80" y="70" fill="#e9c46a" font-size="10" text-anchor="middle" font-family="monospace">SCADA telemetry</text>
-
-    <rect x="10" y="95" width="140" height="40" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="80" y="120" fill="#e9c46a" font-size="10" text-anchor="middle" font-family="monospace">Grid frequency</text>
-
-    <rect x="10" y="145" width="140" height="40" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="80" y="170" fill="#e9c46a" font-size="10" text-anchor="middle" font-family="monospace">Well sensor data</text>
-
-    <rect x="10" y="195" width="140" height="40" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="80" y="220" fill="#e9c46a" font-size="10" text-anchor="middle" font-family="monospace">Scheduled report</text>
-
-    <rect x="10" y="245" width="140" height="40" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="80" y="270" fill="#e9c46a" font-size="10" text-anchor="middle" font-family="monospace">Compliance check</text>
-
-    <!-- Arrows to event bus -->
-    <line x1="150" y1="65" x2="220" y2="170" stroke="#e9c46a" stroke-width="1"/>
-    <line x1="150" y1="115" x2="220" y2="170" stroke="#e9c46a" stroke-width="1"/>
-    <line x1="150" y1="165" x2="220" y2="170" stroke="#e9c46a" stroke-width="1"/>
-    <line x1="150" y1="215" x2="220" y2="170" stroke="#e9c46a" stroke-width="1"/>
-    <line x1="150" y1="265" x2="220" y2="170" stroke="#e9c46a" stroke-width="1"/>
-
-    <!-- Event Bus -->
-    <rect x="220" y="130" width="120" height="80" rx="8" fill="rgba(255,107,53,0.15)" stroke="#ff6b35" stroke-width="2"/>
-    <text x="280" y="160" fill="#ff6b35" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">Event Bus</text>
-    <text x="280" y="178" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Kafka / EventBridge</text>
-    <text x="280" y="195" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">/ Azure Event Grid</text>
-
-    <!-- Arrow to harness -->
-    <line x1="340" y1="170" x2="410" y2="170" stroke="#ff6b35" stroke-width="2"/>
-    <text x="375" y="160" fill="#ff6b35" font-size="9" font-weight="600" font-family="monospace">trigger</text>
-
-    <!-- Agent Harness -->
-    <rect x="410" y="80" width="200" height="180" rx="10" fill="rgba(42,157,143,0.08)" stroke="#2a9d8f" stroke-width="2"/>
-    <text x="510" y="108" fill="#2a9d8f" font-size="13" font-weight="700" text-anchor="middle" font-family="sans-serif">Agent Harness</text>
-    <text x="510" y="128" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">(serverless container)</text>
-
-    <rect x="430" y="140" width="160" height="30" rx="4" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="0.5"/>
-    <text x="510" y="160" fill="#f1faee" font-size="10" text-anchor="middle" font-family="monospace">Context Loading</text>
-
-    <rect x="430" y="178" width="160" height="30" rx="4" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="0.5"/>
-    <text x="510" y="198" fill="#f1faee" font-size="10" text-anchor="middle" font-family="monospace">Reasoning + MCP tools</text>
-
-    <rect x="430" y="216" width="160" height="30" rx="4" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="0.5"/>
-    <text x="510" y="236" fill="#f1faee" font-size="10" text-anchor="middle" font-family="monospace">Decision + Action</text>
-
-    <!-- Arrows to outcomes -->
-    <line x1="610" y1="130" x2="690" y2="80" stroke="#2a9d8f" stroke-width="1.5"/>
-    <line x1="610" y1="170" x2="690" y2="160" stroke="#2a9d8f" stroke-width="1.5"/>
-    <line x1="610" y1="210" x2="690" y2="240" stroke="#2a9d8f" stroke-width="1.5"/>
-    <line x1="610" y1="240" x2="690" y2="320" stroke="#e63946" stroke-width="1.5"/>
-
-    <!-- Outcomes -->
-    <text x="810" y="30" fill="#a8dadc" font-size="13" font-weight="700" text-anchor="middle" font-family="sans-serif">Outcomes</text>
-
-    <rect x="690" y="50" width="250" height="55" rx="6" fill="rgba(42,157,143,0.1)" stroke="#2a9d8f" stroke-width="1"/>
-    <text x="815" y="72" fill="#2a9d8f" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Autonomous Action</text>
-    <text x="815" y="92" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Valve adjustment, load shift, report gen</text>
-
-    <rect x="690" y="120" width="250" height="55" rx="6" fill="rgba(168,218,220,0.08)" stroke="#a8dadc" stroke-width="1"/>
-    <text x="815" y="142" fill="#a8dadc" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Logged Decision</text>
-    <text x="815" y="162" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Audit trail, compliance record, delta log</text>
-
-    <rect x="690" y="200" width="250" height="55" rx="6" fill="rgba(233,196,106,0.1)" stroke="#e9c46a" stroke-width="1"/>
-    <text x="815" y="222" fill="#e9c46a" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Notification</text>
-    <text x="815" y="242" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">PagerDuty, Slack, dashboard update</text>
-
-    <rect x="690" y="285" width="250" height="55" rx="6" fill="rgba(230,57,70,0.1)" stroke="#e63946" stroke-width="1"/>
-    <text x="815" y="307" fill="#e63946" font-size="11" font-weight="600" text-anchor="middle" font-family="sans-serif">Human Escalation</text>
-    <text x="815" y="327" fill="#a8dadc" font-size="9" text-anchor="middle" font-family="monospace">Uncertain? → page engineer with context</text>
-
-    <!-- Bottom label -->
-    <text x="480" y="370" fill="rgba(241,250,238,0.5)" font-size="10" text-anchor="middle" font-family="sans-serif">Same event → reason → act/escalate pattern as NanoClaw, at industrial scale</text>
-  </svg>
-
-  <aside class="notes">
-    Scale this up. Events from SCADA, grid sensors, well data flow into an event bus. Serverless agent harnesses spin up per event — just like NanoClaw spawns a container per message. The agent loads context, reasons with MCP tools (pulling historical data, checking thresholds, consulting runbooks), and then either acts autonomously, logs the decision, notifies, or escalates to a human. This replaces heuristic-based automation with contextual reasoning.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     SLIDE 16: CLOSING
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SLIDE 13: CLOSING
+     ══════════════════════════════════════════════════ -->
 <section class="title-slide">
-  <div class="title-crab">🦀</div>
-  <h2>The Claw is Strong</h2>
+  <div style="font-size:2em; margin-bottom:6px;">🦀</div>
+  <h2 style="margin-bottom:10px;">The Claw is Strong</h2>
 
-  <div style="text-align:center; margin:20px 0;">
-    <div class="stat-grid" style="max-width:700px; margin:0 auto;">
+  <div style="text-align:center; margin:10px 0;">
+    <div class="stat-grid" style="max-width:600px; margin:0 auto;">
       <div class="stat-box">
-        <div class="number">~500</div>
+        <div class="number" style="font-size:1.6em;">~500</div>
         <div class="label">Lines of core code</div>
       </div>
       <div class="stat-box">
-        <div class="number">3</div>
+        <div class="number" style="font-size:1.6em;">3</div>
         <div class="label">Always-on services</div>
       </div>
       <div class="stat-box">
-        <div class="number">$0</div>
+        <div class="number" style="font-size:1.6em;">$0</div>
         <div class="label">Cloud infrastructure</div>
       </div>
     </div>
   </div>
 
-  <div style="font-size:0.6em; text-align:center; margin-top:16px;">
-    <p style="color:var(--seafoam); margin-bottom:12px;">Keep the core small. Let the AI be the complexity. Build the harness, not the app.</p>
+  <p style="font-size:0.55em; color:var(--seafoam); margin:10px 0;">Build the harness, not the app. Add context, tools, and autonomy iteratively.</p>
 
-    <table style="max-width:500px; margin:0 auto; text-align:left;">
+  <div style="font-size:0.5em; text-align:center;">
+    <table style="max-width:560px; margin:0 auto; text-align:left;">
       <tbody>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">NanoClaw</td><td>github.com/qwibitai/nanoclaw</td></tr>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">MacServe</td><td>github.com/qwibitai/macserve</td></tr>
-        <tr><td style="color:var(--crab-orange); font-weight:600;">Kitchen</td><td>github.com/qwibitai/life-os</td></tr>
+        <tr><td style="color:var(--crab-orange); font-weight:600; width:100px;">NanoClaw</td><td><a href="https://github.com/gavrielc/nanoclaw" target="_blank">github.com/gavrielc/nanoclaw</a></td></tr>
+        <tr><td style="color:var(--crab-orange); font-weight:600;">MacServe</td><td><a href="https://github.com/QuentinAd/macserve" target="_blank">github.com/QuentinAd/macserve</a></td></tr>
+        <tr><td style="color:var(--crab-orange); font-weight:600;">Kitchen</td><td><a href="https://github.com/QuentinAd/life-os" target="_blank">github.com/QuentinAd/life-os</a></td></tr>
+        <tr><td style="color:var(--crab-orange); font-weight:600;">These slides</td><td><a href="https://QuentinAd.github.io/ait-claw-preso" target="_blank">QuentinAd.github.io/ait-claw-preso</a></td></tr>
       </tbody>
     </table>
   </div>
 
-  <p class="author" style="margin-top:24px;">
-    Quentin &bull; <span class="accent">qwibit.ai</span> &bull; AI Tinkerers Calgary
+  <p class="author" style="margin-top:10px;">
+    Quentin Adam &bull; AI/Data Engineer @ <span class="accent">Dakota Analytics</span> &bull; AI Tinkerers Calgary
   </p>
 
   <aside class="notes">
-    To wrap up: 500 lines of code. Three always-on services. Zero cloud bills. The pattern is simple: keep the core tiny, make it extensible via skills, let the AI handle the complexity. The cognitive layer for previously impossible use-cases is here. Go build your harness. Thank you!
+    500 lines. Three services. Zero cloud bills. Build the harness, not the app. Add context, tools, and autonomy iteratively. Repo links are on screen and this presentation is available at the GitHub Pages URL. Thank you!
   </aside>
 </section>
 
@@ -1329,11 +913,6 @@ Reveal.initialize({
   minScale: 0.2,
   maxScale: 2.0,
   plugins: [RevealHighlight, RevealNotes],
-  // Keyboard shortcuts
-  keyboard: {
-    // 'b' for blank/black screen
-    66: () => { document.querySelector('.reveal').classList.toggle('blackout'); }
-  }
 });
 </script>
 </body>
